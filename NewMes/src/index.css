@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pre-extra-light: "Pretendard-ExtraLight";
+  --font-pre-light: "Pretendard-Light";
+  --font-pre-regular: "Pretendard-Regular";
+  --font-pre-medium: "Pretendard-Medium";
+  --font-pre-semi-bold: "Pretendard-SemiBold";
+  --font-pre-bold: "Pretendard-Bold";
+  --font-pre-extra-bold: "Pretendard-ExtraBold";
+
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-light: #f7fafc;
+  --color-dark: #070718;
+  --color-icon: #8c8c8c;
+  --color-unavailable: #8e8ea0;
+  --color-active: #b3b2b2;
+  --color-inactive: #1e1e28;
+  --color-listActive: #d9d9d959;
+  --color-mainPurple: #5856d6;
+  --color-toggleInactive: #808080;
+  --color-search: #494952;
+  --color-topbar: #a89b9b;
+  --color-disease1: #ff5e5e;
+  --color-disease2: #fff0f0;
+}
+
+@font-face {
+  font-family: Pretendard-Light;
+  font-weight: 100;
+  src:
+    local("Pretendard Light"),
+    url("./assets/fonts/Pretendard-Light.woff") format("woff"),
+    url("./assets/fonts/Pretendard-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Pretendard-Regular;
+  font-weight: 300;
+  src:
+    local("Pretendard Regular"),
+    url("./assets/fonts/Pretendard-Regular.woff") format("woff"),
+    url("./assets/fonts/Pretendard-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Pretendard-Medium;
+  font-weight: 500;
+  src:
+    local("Pretendard Medium"),
+    url("./assets/fonts/Pretendard-Medium.woff") format("woff"),
+    url("./assets/fonts/Pretendard-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Pretendard-SemiBold;
+  font-weight: 600;
+  src:
+    local("Pretendard SemiBold"),
+    url("./assets/fonts/Pretendard-SemiBold.woff") format("woff"),
+    url("./assets/fonts/Pretendard-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Pretendard-Bold;
+  font-weight: 800;
+  src:
+    local("Pretendard Bold"),
+    url("./assets/fonts/Pretendard-Bold.woff") format("woff"),
+    url("./assets/fonts/Pretendard-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Pretendard-ExtraBold;
+  font-weight: 900;
+  src:
+    local("Pretendard ExtraBold"),
+    url("./assets/fonts/Pretendard-ExtraBold.woff") format("woff"),
+    url("./assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");
+}
+
+body {
+  background: #070718;
+}
