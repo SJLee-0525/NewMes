@@ -2964,14 +2964,14 @@ const RAW_RUNTIME_STATE =
     ]],\
     ["eslint-plugin-prettier", [\
       ["npm:5.5.4", {\
-        "packageLocation": "./.yarn/cache/eslint-plugin-prettier-npm-5.5.4-401c52477f-5cc780e0ab.zip/node_modules/eslint-plugin-prettier/",\
+        "packageLocation": "./.yarn/unplugged/eslint-plugin-prettier-virtual-fde6b8011c/node_modules/eslint-plugin-prettier/",\
         "packageDependencies": [\
           ["eslint-plugin-prettier", "npm:5.5.4"]\
         ],\
         "linkType": "SOFT"\
       }],\
       ["virtual:b9117634eb3f0bb772cc8a6702dcec4b075d5c1a90bf7d0326c146dcfb40cdd4fe3bd433529366bcf7ccf2ab81cf5df25118821b4c20c6438f9b23550772caf6#npm:5.5.4", {\
-        "packageLocation": "./.yarn/__virtual__/eslint-plugin-prettier-virtual-fde6b8011c/0/cache/eslint-plugin-prettier-npm-5.5.4-401c52477f-5cc780e0ab.zip/node_modules/eslint-plugin-prettier/",\
+        "packageLocation": "./.yarn/unplugged/eslint-plugin-prettier-virtual-fde6b8011c/node_modules/eslint-plugin-prettier/",\
         "packageDependencies": [\
           ["@types/eslint", null],\
           ["@types/eslint-config-prettier", null],\
