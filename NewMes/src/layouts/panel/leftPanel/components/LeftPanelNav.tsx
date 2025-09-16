@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import LeftPanelNavButton from "@components/button/LeftPanelNavButton";
 
 import ArrowLeftIcon from "@assets/icons/ArrowLeftIcon";
@@ -7,7 +9,19 @@ import DownLoadIcon from "@assets/icons/DownLoadIcon";
 import useSystemStore from "@stores/systemStore";
 
 const LeftPanelNav = () => {
-  const { leftSidebarSelectedTab, setLeftSidebarSelectedTab, selectedReportId } = useSystemStore();
+  const navigate = useNavigate();
+
+  const { leftSidebarSelectedTab, setLeftSidebarSelectedTab, setSelectedSessionId, selectedReportId } =
+    useSystemStore();
+
+  const handleClick = (label: "chat" | "report") => {
+    setLeftSidebarSelectedTab(label);
+  };
+
+  const handleClickNewChat = () => {
+    setSelectedSessionId(null);
+    navigate("/");
+  };
 
   return (
     <nav className="flex justify-between items-center w-full h-fit p-6 transition-width duration-300">
@@ -20,7 +34,7 @@ const LeftPanelNav = () => {
             height={48}
             strokeColor="#ffffff"
             className="rounded-full transition-all duration-300 hover:bg-toggleInactive"
-            onClick={() => setLeftSidebarSelectedTab("report")}
+            onClick={() => handleClick("report")}
           />
         )}
         <span
@@ -36,12 +50,12 @@ const LeftPanelNav = () => {
         <LeftPanelNavButton
           label="Chat"
           selected={leftSidebarSelectedTab === "chat"}
-          onClick={(label) => setLeftSidebarSelectedTab(label.toLowerCase() as "chat" | "report")}
+          onClick={() => handleClick("chat")}
         />
         <LeftPanelNavButton
           label="Report"
           selected={leftSidebarSelectedTab === "report"}
-          onClick={(label) => setLeftSidebarSelectedTab(label.toLowerCase() as "chat" | "report")}
+          onClick={() => handleClick("report")}
         />
       </section>
 
@@ -61,7 +75,7 @@ const LeftPanelNav = () => {
             height={40}
             strokeColor="#ffffff"
             className="rounded-full transition-all duration-300 hover:bg-toggleInactive"
-            onClick={() => alert("New Chat")}
+            onClick={handleClickNewChat}
           />
         )}
       </figure>

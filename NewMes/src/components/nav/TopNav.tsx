@@ -1,5 +1,5 @@
-import TopNavLeft from "@components/common/nav/components/TopNavLeft";
-import TopNavButtons from "@components/common/nav/components/TopNavButtons";
+import TopNavLeft from "@/components/nav/components/TopNavLeft";
+import TopNavButtons from "@/components/nav/components/TopNavButtons";
 import TopNavButton from "@components/button/TopNavButton";
 
 const TopNav = () => {

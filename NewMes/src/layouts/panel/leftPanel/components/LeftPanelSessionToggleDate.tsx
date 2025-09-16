@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import type { Session } from "@/types/sessionsType";
 
@@ -9,12 +10,19 @@ import useSystemStore from "@stores/systemStore";
 import { getFormattedDate } from "@utils/formatDate";
 
 const LeftPanelSessionToggleDate = ({ date, sessionsOnDate }: { date: string; sessionsOnDate: Session[] }) => {
+  const navigate = useNavigate();
+
   const { selectedSessionId, setSelectedSessionId } = useSystemStore();
 
   const [isOpen, setIsOpen] = useState(true);
 
   function handleToggle() {
     setIsOpen(!isOpen);
+  }
+
+  function handleClickSession(sessionId: number) {
+    setSelectedSessionId(sessionId);
+    navigate(`/chat/${sessionId}`);
   }
 
   const formattedDate = getFormattedDate(date);
@@ -33,7 +41,7 @@ const LeftPanelSessionToggleDate = ({ date, sessionsOnDate }: { date: string; se
               key={session.id}
               label={session.contentSummary}
               selected={selectedSessionId === session.id}
-              onClick={() => setSelectedSessionId(session.id)}
+              onClick={() => handleClickSession(session.id)}
             />
           ))}
       </ul>
