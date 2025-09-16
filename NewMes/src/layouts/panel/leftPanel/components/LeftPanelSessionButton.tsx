@@ -1,20 +1,28 @@
 const LeftPanelSessionButton = ({
-  summary,
+  label,
+  subLabel,
   selected,
   onClick,
 }: {
-  summary: string;
+  label: string;
+  subLabel?: string;
   selected: boolean;
   onClick: () => void;
 }) => {
   return (
     <button
-      className={`flex items-center justify-between w-full px-3 py-1 rounded-full transition-colors duration-300 ${
+      className={`flex justify-start items-center w-full px-3 py-1 gap-2 rounded-full transition-colors duration-300 ${
         selected ? "bg-listActive" : ""
       }`}
       onClick={onClick}
     >
-      <span className="font-medium text-summary truncate max-w-full overflow-hidden whitespace-nowrap">{summary}</span>
+      <span className="font-medium text-summary truncate max-w-full overflow-hidden whitespace-nowrap">{label}</span>
+
+      {subLabel && (
+        <span className="font-normal text-subSummary truncate max-w-full overflow-hidden whitespace-nowrap">
+          {subLabel}
+        </span>
+      )}
     </button>
   );
 };

@@ -6,7 +6,9 @@ import LeftPanelSessionButton from "@layouts/panel/leftPanel/components/LeftPane
 
 import useSystemStore from "@stores/systemStore";
 
-const LeftPanelToggleDate = ({ date, sessionsOnDate }: { date: string; sessionsOnDate: Session[] }) => {
+import { getFormattedDate } from "@utils/formatDate";
+
+const LeftPanelSessionToggleDate = ({ date, sessionsOnDate }: { date: string; sessionsOnDate: Session[] }) => {
   const { selectedSessionId, setSelectedSessionId } = useSystemStore();
 
   const [isOpen, setIsOpen] = useState(true);
@@ -15,10 +17,12 @@ const LeftPanelToggleDate = ({ date, sessionsOnDate }: { date: string; sessionsO
     setIsOpen(!isOpen);
   }
 
+  const formattedDate = getFormattedDate(date);
+
   return (
-    <div className="font-pre-medium">
+    <div className="font-pre-medium text-lg">
       <span className="text-unavailable pl-3 cursor-pointer" onClick={handleToggle}>
-        <i>{date}</i>
+        <i>{formattedDate}</i>
       </span>
 
       {/* max-h 옵션 나중에 손 봐야함. (애니메이션 관련) */}
@@ -27,7 +31,7 @@ const LeftPanelToggleDate = ({ date, sessionsOnDate }: { date: string; sessionsO
           sessionsOnDate.map((session) => (
             <LeftPanelSessionButton
               key={session.id}
-              summary={session.contentSummary}
+              label={session.contentSummary}
               selected={selectedSessionId === session.id}
               onClick={() => setSelectedSessionId(session.id)}
             />
@@ -37,4 +41,4 @@ const LeftPanelToggleDate = ({ date, sessionsOnDate }: { date: string; sessionsO
   );
 };
 
-export default LeftPanelToggleDate;
+export default LeftPanelSessionToggleDate;

@@ -37,3 +37,7 @@ export interface Report {
 export interface ReportsResponse {
   reports: Report[];
 }
+
+export interface GroupByDateReportsResponse {
+  [key: string]: Report[];
+}
