@@ -15,8 +15,8 @@ const AssistantMessage = ({ date, file, content }: AssistantMessageProps) => {
       className="animate-fade-in flex flex-col justify-between items-start w-full h-fit mt-2 p-6 gap-10 border-t border-t-border rounded-xl"
     >
       <header className="flex flex-col justify-start items-start w-full h-fit gap-2">
-        <h2 className="font-pre-bold text-4xl">Answer Summary:</h2>
-        <h4 className="font-pre-medium text-xl">{content}</h4>
+        <h2 className="font-pre-bold text-3xl">Answer Summary:</h2>
+        <h4 className="font-pre-medium text-lg">{content}</h4>
       </header>
 
       {file && file.length > 0 && (
@@ -31,8 +31,8 @@ const AssistantMessage = ({ date, file, content }: AssistantMessageProps) => {
         </figure>
       )}
 
-      <span className="flex flex-col justify-start items-start w-full px-1 gap-3 text-xl text-left font-pre-medium">
-        <h3 className="font-pre-bold text-4xl">Clinical Tip:</h3>
+      <span className="flex flex-col justify-start items-start w-full px-1 gap-3 text-lg text-left font-pre-medium">
+        <h3 className="font-pre-bold text-3xl">Clinical Tip:</h3>
 
         {/* 임시로,, 줄바꿈ㅅ 시 구분자? 다음에 글자 나오도록 수정해야함 */}
         <ul className="font-pre-medium space-y-2.5 list-disc list-inside marker:text-white marker:text-base">

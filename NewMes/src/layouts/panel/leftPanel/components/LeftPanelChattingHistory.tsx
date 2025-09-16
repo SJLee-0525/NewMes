@@ -23,7 +23,7 @@ const LeftPanelChattingHistory = () => {
   }, []);
 
   return (
-    <section className="flex-1 flex flex-col w-full h-full pl-3 pr-6 pb-4 gap-4 overflow-y-auto">
+    <section className="flex-1 flex flex-col w-full pl-3 pr-6 pb-4 gap-4 overflow-y-auto">
       {sessions ? (
         Object.entries(sessions)
           .filter(([_, sessionsData]) => sessionsData.length > 0)

@@ -51,6 +51,15 @@ export interface Patient {
   diagnosis: Diagnosis;
 }
 
+export interface PatientListItem {
+  id: string;
+  name: string;
+  age: number;
+  gender: string;
+  shootingDate: string;
+  images: Image[];
+}
+
 export interface PatientsResponse {
   patients: Patient[];
 }

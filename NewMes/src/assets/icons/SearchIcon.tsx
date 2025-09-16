@@ -1,6 +1,6 @@
 import type { IconProps } from "@/types/iconProps";
 
-const SearchIcon = ({ width = 28, height = 28, strokeColor, onClick }: IconProps) => {
+const SearchIcon = ({ width = 28, height = 28, strokeColor, className, onClick }: IconProps) => {
   return (
     <svg
       width={width}
@@ -8,6 +8,7 @@ const SearchIcon = ({ width = 28, height = 28, strokeColor, onClick }: IconProps
       viewBox="0 0 28 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
       onClick={onClick}
     >
       <path

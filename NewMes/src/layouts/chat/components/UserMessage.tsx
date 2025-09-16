@@ -26,7 +26,7 @@ const UserMessage = ({ date, file, content }: UserMessageProps) => {
         </figure>
       )}
 
-      <span className="w-full px-1 text-xl text-left font-pre-medium">{content}</span>
+      <span className="w-full px-1 text-lg text-left font-pre-medium">{content}</span>
     </div>
   );
 };
