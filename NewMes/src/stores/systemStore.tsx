@@ -21,6 +21,9 @@ interface SystemState {
 
   leftSidebarSelectedTab: "chat" | "report";
   setLeftSidebarSelectedTab: (tab: "chat" | "report") => void;
+
+  selectedSessionId: number | null;
+  setSelectedSessionId: (sessionId: number | null) => void;
 }
 
 const useSystemStore = create<SystemState>((set) => ({
@@ -44,6 +47,9 @@ const useSystemStore = create<SystemState>((set) => ({
 
   leftSidebarSelectedTab: "chat",
   setLeftSidebarSelectedTab: (tab) => set({ leftSidebarSelectedTab: tab }),
+
+  selectedSessionId: null,
+  setSelectedSessionId: (sessionId) => set({ selectedSessionId: sessionId }),
 }));
 
 export default useSystemStore;
