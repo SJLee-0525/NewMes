@@ -83,6 +83,7 @@ export const SESSIONS: SessionsResponse = {
           role: "ASSISTANT",
           content: "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다.",
           createDate: "2025-12-18T19:22:23.854454",
+          messageImages: ["004_000.png"],
         },
       ],
     },

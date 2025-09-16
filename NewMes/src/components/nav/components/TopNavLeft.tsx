@@ -12,14 +12,14 @@ const TopNavLeft = () => {
 
   return (
     <section
-      className={`flex justify-between items-center ${leftWidth} min-w-60 h-full px-4 border-r border-r-border transition-width duration-300`}
+      className={`flex justify-between items-center ${leftWidth} min-w-60 h-full px-6 border-r border-r-border transition-width duration-300`}
     >
       <img src={defaultProfileImage} alt="Profile" className="w-12 h-12 aspect-[1] rounded-full" />
 
       {leftSidebarOpen ? (
-        <CloseIcon width={30} height={30} strokeColor={"#ffffff"} onClick={toggleLeftSidebar} />
+        <CloseIcon width={40} height={40} strokeColor={"#ffffff"} onClick={toggleLeftSidebar} />
       ) : (
-        <MenuIcon width={30} height={30} strokeColor={"#ffffff"} onClick={toggleLeftSidebar} />
+        <MenuIcon width={40} height={40} strokeColor={"#ffffff"} onClick={toggleLeftSidebar} />
       )}
     </section>
   );
