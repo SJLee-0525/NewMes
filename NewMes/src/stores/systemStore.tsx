@@ -24,6 +24,9 @@ interface SystemState {
 
   selectedSessionId: number | null;
   setSelectedSessionId: (sessionId: number | null) => void;
+
+  selectedReportId: { id: number | null; name: string | null };
+  setSelectedReportId: (reportId: number | null, patientName: string | null) => void;
 }
 
 const useSystemStore = create<SystemState>((set) => ({
@@ -46,10 +49,18 @@ const useSystemStore = create<SystemState>((set) => ({
   toggleLeftSidebar: () => set((state) => ({ leftSidebarOpen: !state.leftSidebarOpen })),
 
   leftSidebarSelectedTab: "chat",
-  setLeftSidebarSelectedTab: (tab) => set({ leftSidebarSelectedTab: tab }),
+  setLeftSidebarSelectedTab: (tab) => {
+    set({ leftSidebarSelectedTab: tab, selectedReportId: { id: null, name: null } });
+  },
 
   selectedSessionId: null,
   setSelectedSessionId: (sessionId) => set({ selectedSessionId: sessionId }),
+
+  selectedReportId: { id: null, name: null },
+  setSelectedReportId: (reportId, patientName) => {
+    if (reportId === null || patientName === null) set({ selectedReportId: { id: null, name: null } });
+    else set({ selectedReportId: { id: reportId, name: patientName } });
+  },
 }));
 
 export default useSystemStore;

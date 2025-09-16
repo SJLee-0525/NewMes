@@ -4,7 +4,7 @@ import { getSessionsListApi } from "@apis/userApi";
 
 import type { GroupByDateSessionsResponse } from "@/types/sessionsType";
 
-import LeftPanelToggleDate from "@layouts/panel/leftPanel/components/LeftPanelToggleDate";
+import LeftPanelSessionToggleDate from "@layouts/panel/leftPanel/components/LeftPanelSessionToggleDate";
 
 const LeftPanelChattingHistory = () => {
   const [sessions, setSessions] = useState<GroupByDateSessionsResponse | null>(null);
@@ -28,7 +28,7 @@ const LeftPanelChattingHistory = () => {
         Object.entries(sessions)
           .filter(([_, sessionsData]) => sessionsData.length > 0)
           .map(([date, sessionsOnDate]) => (
-            <LeftPanelToggleDate key={date} date={date} sessionsOnDate={sessionsOnDate} />
+            <LeftPanelSessionToggleDate key={date} date={date} sessionsOnDate={sessionsOnDate} />
           ))
       ) : (
         <p>History is unavailable. We're working to restore this feature as soon as possible.</p>
