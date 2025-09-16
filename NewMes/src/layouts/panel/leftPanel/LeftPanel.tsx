@@ -10,11 +10,11 @@ const LeftPanel = ({ isOpen }: { isOpen: boolean }) => {
   const leftWidth = !isOpen
     ? "w-0"
     : leftSidebarSelectedTab === "chat" || selectedReportId.id === null
-      ? "w-1/4 min-w-60"
-      : "w-2/5 min-w-60";
+      ? "w-1/4 min-w-60 border-r border-r-border"
+      : "w-2/5 min-w-60 border-r border-r-border";
 
   return (
-    <aside className={`flex flex-col ${leftWidth} h-full border-r border-r-border transition-all duration-300`}>
+    <aside className={`flex flex-col ${leftWidth} h-full  transition-width duration-300`}>
       {isOpen && (
         <>
           <LeftPanelNav />

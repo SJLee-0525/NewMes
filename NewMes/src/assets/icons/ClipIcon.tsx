@@ -1,6 +1,6 @@
 import type { IconProps } from "@/types/iconProps";
 
-const ClipIcon = ({ width = 24, height = 24, strokeColor, onClick }: IconProps) => {
+const ClipIcon = ({ width = 24, height = 24, strokeColor, className, onClick }: IconProps) => {
   return (
     <svg
       width={width}
@@ -8,6 +8,7 @@ const ClipIcon = ({ width = 24, height = 24, strokeColor, onClick }: IconProps) 
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
       onClick={onClick}
     >
       <path

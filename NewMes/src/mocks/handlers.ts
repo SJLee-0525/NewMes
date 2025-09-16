@@ -2,6 +2,7 @@ import { http, HttpResponse } from "msw";
 
 import { SESSIONS } from "@datas/SESSIONS";
 import { REPORTS } from "@datas/REPORTS";
+import { PATIENTS } from "@datas/PATIENTS";
 
 const handlers = [
   // 대화 목록 조회
@@ -59,6 +60,26 @@ const handlers = [
     if (report) return HttpResponse.json(report);
     else return HttpResponse.json({ message: "Report not found" }, { status: 404 });
   }),
-];
 
+  // 환자 목록 조회
+  http.get(`/v1/patients`, (req) => {
+    const url = new URL(req.request.url);
+    const name = url.searchParams.get("name");
+
+    const searchName = typeof name === "string" ? name.trim().toLowerCase() : "";
+
+    const filteredPatients = PATIENTS.patients.filter((patient) => patient.name.toLowerCase().includes(searchName));
+
+    const patientsList = filteredPatients.map((patient) => ({
+      id: patient.id,
+      name: patient.name,
+      age: patient.age,
+      gender: patient.gender,
+      shootingDate: patient.shootingDate,
+      images: patient.images,
+    }));
+
+    return HttpResponse.json(patientsList);
+  }),
+];
 export default handlers;

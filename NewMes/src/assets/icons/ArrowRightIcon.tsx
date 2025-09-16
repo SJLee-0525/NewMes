@@ -1,6 +1,6 @@
 import type { IconProps } from "@/types/iconProps";
 
-const ArrowRightIcon = ({ width = 22, height = 22, strokeColor, onClick }: IconProps) => {
+const ArrowRightIcon = ({ width = 22, height = 22, strokeColor, className, onClick }: IconProps) => {
   return (
     <svg
       width={width}
@@ -8,6 +8,7 @@ const ArrowRightIcon = ({ width = 22, height = 22, strokeColor, onClick }: IconP
       viewBox="0 0 22 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
       onClick={onClick}
     >
       <path

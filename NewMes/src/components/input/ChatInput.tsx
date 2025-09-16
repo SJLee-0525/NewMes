@@ -76,7 +76,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
   }, []);
 
   return (
-    <section className="flex flex-col justify-between items-center w-full h-fit p-6 gap-4 bg-inactive rounded-xl">
+    <section className="flex flex-col justify-between items-center w-full h-fit px-6 py-4 gap-4 bg-inactive rounded-3xl">
       {/* 첨부된 이미지 미리보기 */}
       {selectedImages && selectedImages.length > 0 && (
         <div className="flex w-full h-fit gap-3 overflow-x-auto">
@@ -102,7 +102,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
 
       <textarea
         ref={textareaRef}
-        className="w-full min-h-10 max-h-80 resize-none font-pre-regular text-icon text-2xl placeholder:text-icon placeholder:text-2xl bg-transparent outline-none overflow-y-auto"
+        className="w-full min-h-10 max-h-80 resize-none font-pre-regular text-icon text-xl placeholder:text-icon placeholder:text-xl bg-transparent outline-none overflow-y-auto"
         placeholder="Ask anything.."
         rows={1}
         style={{ wordBreak: "break-word" }}
@@ -110,19 +110,19 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
         onKeyDown={(e) => handleKeyDown(e)}
       />
 
-      <div className="flex flex-row-reverse justify-start items-center w-full h-fit gap-2">
+      <div className="flex flex-row-reverse justify-start items-center w-full h-fit gap-2.5">
         <SearchIcon
-          width={32}
-          height={32}
+          width={36}
+          height={36}
           strokeColor="#8C8C8C"
-          className="absolute top-8 right-6 rounded-full"
+          className="p-1 rounded-full cursor-pointer hover:bg-toggleInactive transition-color duration-300"
           onClick={handleSubmit}
         />
         <ClipIcon
-          width={32}
-          height={32}
+          width={36}
+          height={36}
           strokeColor="#8C8C8C"
-          className="absolute top-20 right-6 rounded-full"
+          className="p-1 rounded-full cursor-pointer hover:bg-toggleInactive transition-color duration-300"
           onClick={handleAttachImage}
         />
       </div>
