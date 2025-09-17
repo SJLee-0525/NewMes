@@ -87,7 +87,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
               <img src={URL.createObjectURL(image)} alt={`Selected ${idx}`} className="w-full h-full object-cover" />
 
               <div className="group absolute inset-0 w-full h-full">
-                <span className="absolute top-1 right-1 w-fit h-fit aspect[1/1] p-1 bg-black bg-opacity-50 text-white rounded-full transition-opacity  hover:bg-opacity-75 opacity-0 group-hover:opacity-100">
+                <span className="absolute top-1 right-1 w-fit h-fit aspect-[1/1] p-1 bg-black bg-opacity-50 text-white rounded-full transition-opacity hover:bg-opacity-75 opacity-0 group-hover:opacity-100">
                   <CloseIcon
                     width={20}
                     height={20}
