@@ -2,6 +2,8 @@ import "@styles/animations.css";
 
 import tempImg from "@datas/cxr_image/cxr_03.jpeg"; // 임시 이미지
 
+import { getFormattedDateTime } from "@utils/formatDate";
+
 interface AssistantMessageProps {
   date: string;
   file?: string[];
@@ -9,14 +11,25 @@ interface AssistantMessageProps {
 }
 
 const AssistantMessage = ({ date, file, content }: AssistantMessageProps) => {
+  const formattedDateTime = getFormattedDateTime(date);
+
   return (
     <div
-      title={`Sent on ${date}`}
-      className="animate-fade-in flex flex-col justify-between items-start w-full h-fit mt-2 p-6 gap-10 border-t border-t-border rounded-xl"
+      title={`Sent on ${formattedDateTime}`}
+      className="animate-fade-in flex flex-col justify-between items-start w-full h-fit mt-2 p-6 gap-10 border-t border-t-border"
     >
       <header className="flex flex-col justify-start items-start w-full h-fit gap-2">
         <h2 className="font-pre-bold text-3xl">Answer Summary:</h2>
-        <h4 className="font-pre-medium text-lg">{content}</h4>
+
+        {/* 메시지 내용: '\n을 <br />로 변환해서 줄바꿈 처리 */}
+        <span className="w-full text-lg text-left font-pre-medium break-words">
+          {content.split("\n").map((line, idx) => (
+            <span key={idx}>
+              {line}
+              {idx !== content.split("\n").length - 1 && <br />}
+            </span>
+          ))}
+        </span>
       </header>
 
       {file && file.length > 0 && (

@@ -19,6 +19,7 @@ const handlers = [
         groupedByDate[date].push(session);
       });
 
+    // return HttpResponse.json({});
     return HttpResponse.json(groupedByDate);
   }),
 
@@ -47,6 +48,7 @@ const handlers = [
         groupedByDate[date].push(report);
       });
 
+    // return HttpResponse.json({});
     return HttpResponse.json(groupedByDate);
   }),
 
@@ -56,6 +58,8 @@ const handlers = [
     const reportIdNum = Number(reportId);
 
     const report = REPORTS.reports.find((r) => r.reportId === reportIdNum);
+
+    // return HttpResponse.json({ message: "Report not found" }, { status: 404 });
 
     if (report) return HttpResponse.json(report);
     else return HttpResponse.json({ message: "Report not found" }, { status: 404 });
@@ -79,6 +83,7 @@ const handlers = [
       images: patient.images,
     }));
 
+    // return HttpResponse.json([]);
     return HttpResponse.json(patientsList);
   }),
 ];

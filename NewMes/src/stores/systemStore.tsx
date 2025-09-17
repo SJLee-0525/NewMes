@@ -33,8 +33,8 @@ interface SystemState {
   rightSidebarOpen: boolean;
   toggleRightSidebar: (bool: boolean) => void;
 
-  selectedPatientId: { id: string | null; images: Image[] };
-  setSelectedPatientId: (patientId: string | null, images: Image[]) => void;
+  selectedPatientId: { id: string | null; name: string | null; images: Image[] };
+  setSelectedPatientId: (patientId: string | null, patientName: string | null, images: Image[]) => void;
 }
 
 const useSystemStore = create<SystemState>((set) => ({
@@ -73,8 +73,9 @@ const useSystemStore = create<SystemState>((set) => ({
   rightSidebarOpen: false,
   toggleRightSidebar: (bool) => set({ rightSidebarOpen: bool }),
 
-  selectedPatientId: { id: null, images: [] },
-  setSelectedPatientId: (patientId, images) => set({ selectedPatientId: { id: patientId, images } }),
+  selectedPatientId: { id: null, name: null, images: [] },
+  setSelectedPatientId: (patientId, patientName, images) =>
+    set({ selectedPatientId: { id: patientId, name: patientName, images } }),
 }));
 
 export default useSystemStore;

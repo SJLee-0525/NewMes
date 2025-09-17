@@ -16,10 +16,12 @@ const LeftPanelSessionToggleDate = ({ date, sessionsOnDate }: { date: string; se
 
   const [isOpen, setIsOpen] = useState(true);
 
+  // 날짜 토글 열고 닫기
   function handleToggle() {
     setIsOpen(!isOpen);
   }
 
+  // 세션 클릭 시 선택된 세션 ID 업데이트 및 채팅 화면으로 이동
   function handleClickSession(sessionId: number) {
     setSelectedSessionId(sessionId);
     navigate(`/chat/${sessionId}`);

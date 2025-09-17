@@ -11,27 +11,35 @@ import useSystemStore from "@stores/systemStore";
 const LeftPanelNav = () => {
   const navigate = useNavigate();
 
-  const { leftSidebarSelectedTab, setLeftSidebarSelectedTab, setSelectedSessionId, selectedReportId } =
-    useSystemStore();
+  const {
+    leftSidebarSelectedTab,
+    setLeftSidebarSelectedTab,
+    setSelectedSessionId,
+    selectedReportId,
+    setSelectedPatientId,
+  } = useSystemStore();
 
+  // 탭 변경
   const handleClick = (label: "chat" | "report") => {
     setLeftSidebarSelectedTab(label);
   };
 
+  // 새 채팅 시작 (세션 선택 초기화 및 환자 선택 초기화 후 메인 화면으로 이동)
   const handleClickNewChat = () => {
     setSelectedSessionId(null);
+    setSelectedPatientId(null, null, []);
     navigate("/");
   };
 
   return (
-    <nav className="flex justify-between items-center w-full h-fit p-6 transition-width duration-300">
+    <nav className="flex justify-between items-center w-full h-fit px-4 py-6 transition-width duration-300">
       <section
         className={`flex justify-start items-center ${selectedReportId.id ? "max-w-1/4 w-full" : "max-w-0"} gap-1 overflow-hidden`}
       >
         {selectedReportId.id && (
           <ArrowLeftIcon
-            width={48}
-            height={48}
+            width={44}
+            height={44}
             strokeColor="#ffffff"
             className="rounded-full transition-all duration-300 hover:bg-toggleInactive"
             onClick={() => handleClick("report")}
@@ -45,7 +53,7 @@ const LeftPanelNav = () => {
       </section>
 
       <section
-        className={`flex justify-center items-center ${selectedReportId.id ? "max-w-1/2" : "w-5/6"} w-full h-full gap-4`}
+        className={`flex justify-center items-center ${selectedReportId.id ? "max-w-[45%]" : "w-5/6"} w-full h-full gap-4`}
       >
         <LeftPanelNavButton
           label="Chat"

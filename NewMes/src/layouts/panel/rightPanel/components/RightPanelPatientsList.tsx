@@ -15,12 +15,14 @@ const RightPanelPatientsList = ({ patient }: { patient: PatientListItem }) => {
 
   const { selectedPatientId, setSelectedPatientId } = useSystemStore();
 
+  // 환자 선택 / 해제
+  // 선택된 환자와 동일하면 해제, 다르면 선택 및 확장
   function handleSelectPatient() {
     if (selectedPatientId.id === patient.id) {
-      setSelectedPatientId(null, []);
+      setSelectedPatientId(null, null, []);
       setIsExpanded(false);
     } else {
-      setSelectedPatientId(patient.id, []);
+      setSelectedPatientId(patient.id, patient.name, []);
       setIsExpanded(true);
     }
   }
@@ -70,7 +72,7 @@ const RightPanelPatientsList = ({ patient }: { patient: PatientListItem }) => {
         )}
       </header>
 
-      <RightPanelPatientImages id={patient.id} images={patient.images} isExpanded={isExpanded} />
+      <RightPanelPatientImages id={patient.id} name={patient.name} images={patient.images} isExpanded={isExpanded} />
     </>
   );
 };
