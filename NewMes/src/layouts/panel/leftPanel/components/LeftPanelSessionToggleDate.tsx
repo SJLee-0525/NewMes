@@ -36,7 +36,7 @@ const LeftPanelSessionToggleDate = ({ date, sessionsOnDate }: { date: string; se
       </span>
 
       {/* max-h 옵션 나중에 손 봐야함. (애니메이션 관련) */}
-      <ul className={`${isOpen ? "max-h-40" : "max-h-0"} overflow-hidden transition-max-height duration-300`}>
+      <ul className={`${isOpen ? "max-h-40" : "max-h-0"} overflow-hidden transition-all duration-300`}>
         {sessionsOnDate &&
           sessionsOnDate.map((session) => (
             <LeftPanelSessionButton

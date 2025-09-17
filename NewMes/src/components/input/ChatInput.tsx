@@ -53,7 +53,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
   function handleSubmit() {
     const message = textareaRef.current?.value;
     console.log(message);
-    if (!message && message?.trim() === "") return;
+    if (!message || message?.trim() === "") return;
 
     if (selectedImages && selectedImages.length > 0) {
       // 이미지 업로드 로직 필요
@@ -86,7 +86,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
             <div key={idx} className="relative flex-shrink-0 w-24 h-24 aspect-[1/1] rounded-lg overflow-hidden">
               <img src={URL.createObjectURL(image)} alt={`Selected ${idx}`} className="w-full h-full object-cover" />
 
-              <div className="group w-full h-full" style={{ position: "absolute", inset: 0 }}>
+              <div className="group absolute inset-0 w-full h-full">
                 <span className="absolute top-1 right-1 w-fit h-fit aspect[1/1] p-1 bg-black bg-opacity-50 text-white rounded-full transition-opacity  hover:bg-opacity-75 opacity-0 group-hover:opacity-100">
                   <CloseIcon
                     width={20}
