@@ -41,3 +41,7 @@ export interface Session {
 export interface SessionsResponse {
   sessions: Session[];
 }
+
+export interface GroupByDateSessionsResponse {
+  [key: string]: Session[];
+}

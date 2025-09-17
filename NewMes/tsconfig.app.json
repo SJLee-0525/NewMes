@@ -26,9 +26,12 @@
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],
+      "@apis/*": ["apis/*"],
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
       "@datas/*": ["datas/*"],
+      "@layouts/*": ["layouts/*"],
+      "@mocks/*": ["mocks/*"],
       "@pages/*": ["pages/*"],
       "@stores/*": ["stores/*"],
       "@styles/*": ["styles/*"],
