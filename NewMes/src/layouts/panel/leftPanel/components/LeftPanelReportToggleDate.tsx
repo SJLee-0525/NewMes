@@ -13,6 +13,7 @@ const LeftPanelReportToggleDate = ({ date, reportsOnDate }: { date: string; repo
 
   const [isOpen, setIsOpen] = useState(true);
 
+  // 날짜 토글 열고 닫기
   function handleToggle() {
     setIsOpen(!isOpen);
   }

@@ -4,6 +4,8 @@ import { getPatientListApi } from "@apis/userApi";
 
 import type { PatientListItem } from "@/types/patientsType";
 
+import Unavailable from "@components/unavailable/Unavailable";
+
 import RightPanelInput from "@layouts/panel/rightPanel/components/RightPanelInput";
 import RightPanelPatientsList from "@layouts/panel/rightPanel/components/RightPanelPatientsList";
 
@@ -11,6 +13,8 @@ const RightPanelPatientsContainer = () => {
   const [searchInput, setSearchInput] = useState("");
   const [patients, setPatients] = useState<PatientListItem[] | null>(null);
 
+  // 환자 목록 불러오기
+  // searchInput 값이 있다면, 해당 이름으로 필터링
   async function fetchPatients() {
     try {
       const data = await getPatientListApi(searchInput);
@@ -32,7 +36,7 @@ const RightPanelPatientsContainer = () => {
         {patients && patients.length > 0 ? (
           patients.map((patient) => <RightPanelPatientsList key={patient.id} patient={patient} />)
         ) : (
-          <p>No patients found.</p>
+          <Unavailable type="error" content={"Patient list"} />
         )}
       </section>
     </section>

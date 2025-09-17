@@ -6,7 +6,7 @@ const RightPanelNav = () => {
   const { toggleRightSidebar } = useSystemStore();
 
   return (
-    <nav className="flex justify-between items-center w-full h-fit px-6 pt-4 pb-2">
+    <nav className="flex justify-between items-center w-full h-fit px-6 py-4">
       <h2 className="text-2xl text-icon font-pre-medium">Patients</h2>
 
       <MinimizeIcon

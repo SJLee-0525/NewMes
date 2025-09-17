@@ -8,7 +8,8 @@ import defaultProfileImage from "@assets/images/defaultProfile.png";
 const TopNavLeft = () => {
   const { leftSidebarOpen, toggleLeftSidebar, leftSidebarSelectedTab, selectedReportId } = useSystemStore();
 
-  const leftWidth = leftSidebarSelectedTab === "chat" || selectedReportId.id === null ? "w-1/4" : "w-2/5";
+  const leftWidth =
+    !leftSidebarOpen || leftSidebarSelectedTab === "chat" || selectedReportId.id === null ? "w-1/4" : "w-2/5";
 
   return (
     <section

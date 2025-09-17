@@ -43,6 +43,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
   // Enter 키로 전송 (Shift + Enter는 줄바꿈)
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === "Enter" && !e.shiftKey) {
+      if ((e.nativeEvent as any).isComposing) return; // 한글 조합 중이면 무시
       e.preventDefault();
       handleSubmit();
     }
@@ -51,6 +52,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
   // 메시지 전송
   function handleSubmit() {
     const message = textareaRef.current?.value;
+    console.log(message);
     if (!message && message?.trim() === "") return;
 
     if (selectedImages && selectedImages.length > 0) {

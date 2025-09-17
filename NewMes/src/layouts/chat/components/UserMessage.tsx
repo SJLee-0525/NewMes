@@ -2,6 +2,8 @@ import "@styles/animations.css";
 
 import tempImg from "@datas/cxr_image/cxr_02.jpeg"; // 임시 이미지
 
+import { getFormattedDateTime } from "@utils/formatDate";
+
 interface UserMessageProps {
   date: string;
   file?: string[];
@@ -9,10 +11,12 @@ interface UserMessageProps {
 }
 
 const UserMessage = ({ date, file, content }: UserMessageProps) => {
+  const formattedDateTime = getFormattedDateTime(date);
+
   return (
     <div
-      title={`Sent on ${date}`}
-      className="animate-fade-in flex flex-col justify-between items-end w-fit max-w-[60%] h-fit p-4 gap-4 bg-inactive rounded-xl"
+      title={formattedDateTime}
+      className="animate-fade-in flex flex-col justify-between items-end w-fit h-fit p-4 gap-4 bg-inactive rounded-xl"
     >
       {file && file.length > 0 && (
         <figure className="relative max-w-48 aspect-[15/16] rounded-lg overflow-hidden">
@@ -26,7 +30,15 @@ const UserMessage = ({ date, file, content }: UserMessageProps) => {
         </figure>
       )}
 
-      <span className="w-full px-1 text-lg text-left font-pre-medium">{content}</span>
+      {/* 메시지 내용: '\n을 <br />로 변환해서 줄바꿈 처리 */}
+      <span className="w-full max-w-140 px-2 text-lg text-left font-pre-medium break-words">
+        {content.split("\n").map((line, idx) => (
+          <span key={idx}>
+            {line}
+            {idx !== content.split("\n").length - 1 && <br />}
+          </span>
+        ))}
+      </span>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import { getReportDetailApi } from "@apis/userApi";
 
 import type { Report } from "@/types/reportsType";
 
+import LeftPanelLoadingReportDetail from "@layouts/panel/leftPanel/components/LeftpanelLoadingReportDetail";
+
 import DetailBox from "@components/box/DetailBox";
 import EditIcon from "@assets/icons/EditIcon";
 
@@ -13,6 +15,9 @@ const LeftPanelDetailReport = ({ selectedReportId }: { selectedReportId: number 
   const [reportDetail, setReportDetail] = useState<Report | null>(null);
 
   useEffect(() => {
+    if (!selectedReportId) return;
+
+    // 선택된 리포트 ID가 변경될 때마다 해당 리포트의 세부 정보를 가져옴
     async function fetchReportDetail() {
       try {
         const data = await getReportDetailApi(selectedReportId);
@@ -26,13 +31,13 @@ const LeftPanelDetailReport = ({ selectedReportId }: { selectedReportId: number 
   }, [selectedReportId]);
 
   if (!reportDetail) {
-    return <div className="text-white">Loading report details...</div>;
+    return <LeftPanelLoadingReportDetail />;
   }
 
   return (
     <section className="flex-1 flex flex-col w-full h-full px-6 pb-4 gap-4 overflow-y-auto text-white">
       <section className="flex w-full h-fit gap-4">
-        <figure className="relative max-w-1/2 aspect-[16/17] rounded-xl overflow-hidden">
+        <figure className="relative w-1/2 aspect-[16/17] rounded-xl overflow-hidden">
           <img src={tempImg} alt="temp" className="w-full h-full object-cover" />
           <span className="absolute top-3 right-3">
             <EditIcon width={24} height={24} strokeColor="#fff" className="rounded-full hover:bg-toggleInactive" />
