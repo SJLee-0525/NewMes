@@ -11,7 +11,13 @@ import EditIcon from "@assets/icons/EditIcon";
 
 import tempImg from "@datas/cxr_image/cxr_01.jpg";
 
-const LeftPanelDetailReport = ({ selectedReportId }: { selectedReportId: number }) => {
+const LeftPanelDetailReport = ({
+  ref,
+  selectedReportId,
+}: {
+  ref: React.RefObject<HTMLElement | null>;
+  selectedReportId: number;
+}) => {
   const [reportDetail, setReportDetail] = useState<Report | null>(null);
 
   useEffect(() => {
@@ -35,16 +41,17 @@ const LeftPanelDetailReport = ({ selectedReportId }: { selectedReportId: number 
   }
 
   return (
-    <section className="flex-1 flex flex-col w-full h-full px-6 pb-4 gap-4 overflow-y-auto text-white">
-      <section className="flex w-full h-fit gap-4">
+    <section ref={ref} className="flex-1 flex flex-col w-full h-full px-6 pb-4 gap-4 overflow-y-auto text-white">
+      <section className="top-area flex w-full h-fit gap-4">
         <figure className="relative w-1/2 aspect-[16/17] rounded-xl overflow-hidden">
           <img src={tempImg} alt="temp" className="w-full h-full object-cover" />
+
           <span className="absolute top-3 right-3">
             <EditIcon width={24} height={24} strokeColor="#fff" className="rounded-full hover:bg-toggleInactive" />
           </span>
         </figure>
 
-        <section className="flex-1 flex flex-col h-full gap-4 justify-between items-center">
+        <section className="top-right-area flex flex-col w-1/2 h-full gap-4 justify-between items-center">
           <DetailBox
             type="list"
             size="full"

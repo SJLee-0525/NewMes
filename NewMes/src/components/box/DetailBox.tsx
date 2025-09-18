@@ -10,7 +10,7 @@ interface DetailBoxProps {
 const DetailBox = ({ type, size, title, detail }: DetailBoxProps) => {
   return (
     <span
-      className={`flex flex-col justify-between items-center w-full ${size === "full" ? "h-full" : "h-fit"} px-4 py-3 gap-2 rounded-xl bg-inactive `}
+      className={`detail-box flex flex-col justify-between items-center w-full ${size === "full" ? "h-full" : "h-fit"} px-4 py-3 gap-2 rounded-xl bg-inactive `}
     >
       <header className="flex justify-between items-start w-full min-h-10">
         <h3 className="w-full h-fit font-pre-semi-bold text-title text-left whitespace-nowrap">{title}</h3>

@@ -11,7 +11,7 @@ import LeftPanelDetailReport from "@layouts/panel/leftPanel/components/LeftPanel
 
 import useSystemStore from "@stores/systemStore";
 
-const LeftPanelReportHistory = () => {
+const LeftPanelReportHistory = ({ ref }: { ref: React.RefObject<HTMLElement | null> }) => {
   const { selectedReportId } = useSystemStore();
 
   const [reports, setReports] = useState<GroupByDateReportsResponse | null>(null);
@@ -47,7 +47,7 @@ const LeftPanelReportHistory = () => {
         <Unavailable type="error" content={"Report history"} />
       )}
 
-      {selectedReportId.id && <LeftPanelDetailReport selectedReportId={selectedReportId.id} />}
+      {selectedReportId.id && <LeftPanelDetailReport ref={ref} selectedReportId={selectedReportId.id} />}
     </section>
   );
 };

@@ -8,7 +8,7 @@ import DownLoadIcon from "@assets/icons/DownLoadIcon";
 
 import useSystemStore from "@stores/systemStore";
 
-const LeftPanelNav = () => {
+const LeftPanelNav = ({ onPrint }: { onPrint: () => void }) => {
   const navigate = useNavigate();
 
   const {
@@ -76,6 +76,7 @@ const LeftPanelNav = () => {
             height={36}
             strokeColor="#ffffff"
             className="rounded-full transition-all duration-300 hover:bg-toggleInactive"
+            onClick={onPrint}
           />
         ) : (
           <PlusIcon
