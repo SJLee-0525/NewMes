@@ -1,6 +1,7 @@
 import { http, HttpResponse } from "msw";
 
 import { SESSIONS } from "@datas/SESSIONS";
+// @ts-ignore
 import { REPORTS } from "@datas/REPORTS";
 import { PATIENTS } from "@datas/PATIENTS";
 

@@ -27,8 +27,9 @@ const Chatting = () => {
   const location = useLocation();
   const session = (location.state && (location.state as { session: Session }).session) as Session | undefined;
 
-  const { selectedPatientId, setSelectedPatientId } = useSystemStore();
+  const { setSelectedPatientId } = useSystemStore();
 
+  const [chattingPatientInfo, setChattingPatientInfo] = useState<{ id: string; name: string } | null>(null);
   const [sessionDetail, setSessionDetail] = useState<Session | null>(null);
 
   const messagesContainerRef = useRef<HTMLDivElement | null>(null);
@@ -52,7 +53,7 @@ const Chatting = () => {
 
     // 이미지 파일이 있으면 메시지에 이미지 정보 추가: 실제로는 업로드 후 URL을 받아와야 함
     if (images && images.length > 0) {
-      messageData.messageImages = images.map((file) => file.name);
+      messageData.messageImages = images.map((file) => URL.createObjectURL(file) || file.name);
     }
 
     // 이후 서버에 메시지 전송: 현재는 임시로 상태에 추가
@@ -87,15 +88,23 @@ const Chatting = () => {
 
           // 환자 정보 불러오기 (임시: 세션에 환자 id가 없으므로 이름으로 검색)
           const patientInfo = await getPatientListApi(data.patientName);
-          if (patientInfo.length > 0) setSelectedPatientId(patientInfo[0].id, patientInfo[0].name, []);
+          if (patientInfo.length > 0) {
+            setSelectedPatientId(patientInfo[0].id, patientInfo[0].name, []);
+            setChattingPatientInfo({ id: patientInfo[0].id, name: patientInfo[0].name });
+          }
         } else {
           // NewChat에서 넘어온 세션이 있으면 그걸로 설정
           setSessionDetail(session);
 
           // 환자 정보 불러오기 (임시: 세션에 환자 id가 없으므로 이름으로 검색, 없다면 세션에서 가져온 데이터 사용)
           const patientInfo = await getPatientListApi(session.patientName);
-          if (patientInfo.length > 0) setSelectedPatientId(patientInfo[0].id, patientInfo[0].name, []);
-          else setSelectedPatientId(session.id.toString(), session.patientName, []);
+          if (patientInfo.length > 0) {
+            setSelectedPatientId(patientInfo[0].id, patientInfo[0].name, []);
+            setChattingPatientInfo({ id: patientInfo[0].id, name: patientInfo[0].name });
+          } else {
+            setSelectedPatientId(session.id.toString(), session.patientName, []);
+            setChattingPatientInfo({ id: session.id.toString(), name: session.patientName });
+          }
         }
       } catch (error) {
         console.error("Error fetching session detail:", error);
@@ -121,7 +130,7 @@ const Chatting = () => {
         <section ref={messagesContainerRef} className="flex justify-center w-full overflow-y-auto">
           <header className="absolute top-0 w-full max-w-320 z-10">
             <h2 className="text-xl font-pre-semi-bold w-full pl-8 pr-10 py-3 bg-gradient-to-r from-dark to-dark/0 pointer-events-none">
-              {selectedPatientId.id} {selectedPatientId.name}
+              {chattingPatientInfo?.id} {chattingPatientInfo?.name}
             </h2>
           </header>
 

@@ -4,7 +4,17 @@ import CloseIcon from "@assets/icons/CloseIcon";
 import SearchIcon from "@assets/icons/SearchIcon";
 import ClipIcon from "@assets/icons/ClipIcon";
 
+import useSystemStore from "@stores/systemStore";
+
+import tempImg1 from "@datas/cxr_image/cxr_01.jpg";
+import tempImg2 from "@datas/cxr_image/cxr_02.jpeg";
+import tempImg3 from "@datas/cxr_image/cxr_03.jpeg";
+
+const TEMP_IMAGES = [tempImg1, tempImg2, tempImg3];
+
 const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: File[] | null }) => void }) => {
+  const { selectedPatientId } = useSystemStore();
+
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -77,11 +87,42 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
     }
   }, []);
 
+  // 환자 패널에서 선택된 이미지를 기반으로 File 객체 생성 후 선택 이미지 목록에 추가 (임시)
+  useEffect(() => {
+    async function fetchAndSetImages() {
+      if (selectedPatientId.images.length === 0) return;
+
+      const imageFiles = await Promise.all(
+        selectedPatientId.images.map(async (img, idx) => {
+          try {
+            const response = await fetch(TEMP_IMAGES[idx % 3]);
+            if (!response.ok) throw new Error(`Failed to fetch image: ${img.filename}`);
+
+            const blob = await response.blob();
+            return new File([blob], img.filename, { type: blob.type });
+          } catch (error) {
+            console.error("Error creating file from image:", error);
+            return null;
+          }
+        })
+      );
+
+      // 중복 없이 추가
+      const uniqueFiles = imageFiles.filter(
+        (file): file is File => file !== null && !selectedImages.some((f) => f.name === file.name)
+      );
+
+      setSelectedImages((prev) => [...prev, ...uniqueFiles]);
+    }
+
+    fetchAndSetImages();
+  }, [selectedPatientId.images]);
+
   return (
-    <section className="flex flex-col justify-between items-center w-full h-fit px-6 py-4 gap-4 bg-inactive rounded-3xl">
+    <section className="flex flex-col justify-between items-start w-full max-w-fullh-fit px-6 py-4 gap-4 bg-inactive rounded-3xl">
       {/* 첨부된 이미지 미리보기 */}
       {selectedImages && selectedImages.length > 0 && (
-        <div className="flex w-full h-fit gap-3 overflow-x-auto">
+        <div className="flex w-full max-w-[30vw] h-fit gap-3 overflow-x-auto">
           {selectedImages.map((image, idx) => (
             <div key={idx} className="relative flex-shrink-0 w-24 h-24 aspect-[1/1] rounded-lg overflow-hidden">
               <img src={URL.createObjectURL(image)} alt={`Selected ${idx}`} className="w-full h-full object-cover" />

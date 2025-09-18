@@ -1,5 +1,9 @@
 import type { SessionsResponse } from "../types/sessionsType";
 
+import tempImg1 from "@datas/cxr_image/cxr_01.jpg";
+import tempImg2 from "@datas/cxr_image/cxr_02.jpeg";
+import tempImg3 from "@datas/cxr_image/cxr_03.jpeg";
+
 export const SESSIONS: SessionsResponse = {
   sessions: [
     {
@@ -13,7 +17,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Fever, cough 증상을 보입니다.",
           createDate: "2025-05-10T08:16:49.673598",
-          messageImages: ["001_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743001,
@@ -34,7 +38,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Dyspnea 증상을 보입니다.",
           createDate: "2024-07-29T16:44:28.928375",
-          messageImages: ["002_000.png"],
+          messageImages: [tempImg2, tempImg3],
         },
         {
           messageId: 99254743003,
@@ -55,7 +59,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Exertional dyspnea 증상을 보입니다.",
           createDate: "2025-09-27T12:32:58.796313",
-          messageImages: ["003_000.png"],
+          messageImages: [tempImg3],
         },
         {
           messageId: 99254743005,
@@ -76,14 +80,14 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Dyspnea 증상을 보입니다.",
           createDate: "2025-09-08T09:18:31.907064",
-          messageImages: ["004_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743007,
           role: "ASSISTANT",
           content: "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다.",
           createDate: "2025-12-18T19:22:23.854454",
-          messageImages: ["004_000.png"],
+          messageImages: [tempImg1],
         },
       ],
     },
@@ -98,7 +102,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Fever, cough 증상을 보입니다.",
           createDate: "2025-04-19T07:52:46.842698",
-          messageImages: ["005_000.png"],
+          messageImages: [tempImg2],
         },
         {
           messageId: 99254743009,
@@ -119,7 +123,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Fever, cough 증상을 보입니다.",
           createDate: "2024-03-05T12:37:57.084717",
-          messageImages: ["006_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743011,
@@ -140,7 +144,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Fever, cough 증상을 보입니다.",
           createDate: "2025-10-11T10:58:24.174587",
-          messageImages: ["007_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743013,
@@ -161,7 +165,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Exertional dyspnea 증상을 보입니다.",
           createDate: "2024-01-18T21:09:28.182076",
-          messageImages: ["008_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743015,
@@ -182,7 +186,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Exertional dyspnea 증상을 보입니다.",
           createDate: "2024-12-10T05:17:21.697040",
-          messageImages: ["009_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743017,
@@ -203,7 +207,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Fever, cough 증상을 보입니다.",
           createDate: "2024-09-23T14:15:50.634341",
-          messageImages: ["010_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743019,
@@ -230,7 +234,7 @@ export const SESSIONS: SessionsResponse = {
           role: "ASSISTANT",
           content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
           createDate: "2024-06-24T23:42:08.985329",
-          messageImages: ["011_000.png"],
+          messageImages: [tempImg1],
         },
       ],
     },
@@ -245,7 +249,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Exertional dyspnea 증상을 보입니다.",
           createDate: "2025-11-05T03:32:43.909767",
-          messageImages: ["012_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743023,
@@ -266,7 +270,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Exertional dyspnea 증상을 보입니다.",
           createDate: "2025-01-29T02:34:07.727712",
-          messageImages: ["013_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743025,
@@ -287,7 +291,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Cough, chest discomfort 증상을 보입니다.",
           createDate: "2024-06-25T13:33:58.905867",
-          messageImages: ["014_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743027,
@@ -308,7 +312,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Dyspnea 증상을 보입니다.",
           createDate: "2024-04-01T10:23:34.412088",
-          messageImages: ["015_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743029,
@@ -329,7 +333,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Dyspnea 증상을 보입니다.",
           createDate: "2024-05-12T17:54:44.563041",
-          messageImages: ["016_000.png"],
+          messageImages: [tempImg3],
         },
         {
           messageId: 99254743031,
@@ -350,7 +354,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Dyspnea 증상을 보입니다.",
           createDate: "2024-06-28T11:34:48.326704",
-          messageImages: ["017_000.png"],
+          messageImages: [tempImg2],
         },
         {
           messageId: 99254743033,
@@ -371,7 +375,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Cough, chest discomfort 증상을 보입니다.",
           createDate: "2024-08-24T12:46:47.523274",
-          messageImages: ["018_000.png"],
+          messageImages: [tempImg2],
         },
         {
           messageId: 99254743035,
@@ -392,7 +396,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Wheezing, chronic cough 증상을 보입니다.",
           createDate: "2024-11-01T18:13:33.956881",
-          messageImages: ["019_000.png"],
+          messageImages: [tempImg3],
         },
         {
           messageId: 99254743037,
@@ -413,7 +417,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Night sweats, weight loss 증상을 보입니다.",
           createDate: "2025-05-30T10:37:32.656516",
-          messageImages: ["020_000.png"],
+          messageImages: [tempImg2],
         },
         {
           messageId: 99254743039,
@@ -434,7 +438,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Fever, cough 증상을 보입니다.",
           createDate: "2025-08-22T13:43:27.349626",
-          messageImages: ["021_000.png"],
+          messageImages: [tempImg3],
         },
         {
           messageId: 99254743041,
@@ -455,7 +459,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Fever, cough 증상을 보입니다.",
           createDate: "2025-02-27T14:26:35.643714",
-          messageImages: ["022_000.png"],
+          messageImages: [tempImg2],
         },
         {
           messageId: 99254743043,
@@ -476,7 +480,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Exertional dyspnea 증상을 보입니다.",
           createDate: "2024-03-08T18:09:37.286465",
-          messageImages: ["023_000.png"],
+          messageImages: [tempImg1, tempImg3],
         },
         {
           messageId: 99254743045,
@@ -497,7 +501,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Night sweats, weight loss 증상을 보입니다.",
           createDate: "2025-08-07T22:55:17.389145",
-          messageImages: ["024_000.png"],
+          messageImages: [tempImg1, tempImg2, tempImg3],
         },
         {
           messageId: 99254743047,
@@ -518,7 +522,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Fever, cough 증상을 보입니다.",
           createDate: "2024-09-04T10:02:28.061637",
-          messageImages: ["025_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743049,
@@ -539,7 +543,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Cough, chest discomfort 증상을 보입니다.",
           createDate: "2025-09-29T07:26:37.047493",
-          messageImages: ["026_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743051,
@@ -560,7 +564,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Night sweats, weight loss 증상을 보입니다.",
           createDate: "2024-08-02T11:35:55.403530",
-          messageImages: ["027_000.png"],
+          messageImages: [tempImg1, tempImg2],
         },
         {
           messageId: 99254743053,
@@ -581,7 +585,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Dyspnea 증상을 보입니다.",
           createDate: "2025-11-10T17:20:26.018863",
-          messageImages: ["028_000.png"],
+          messageImages: [tempImg2, tempImg3],
         },
         {
           messageId: 99254743055,
@@ -602,7 +606,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Cough, chest discomfort 증상을 보입니다.",
           createDate: "2024-10-06T02:26:24.544293",
-          messageImages: ["029_000.png"],
+          messageImages: [tempImg1],
         },
         {
           messageId: 99254743057,
@@ -623,7 +627,7 @@ export const SESSIONS: SessionsResponse = {
           role: "USER",
           content: "환자가 Wheezing, chronic cough 증상을 보입니다.",
           createDate: "2025-04-27T21:33:56.148057",
-          messageImages: ["030_000.png"],
+          messageImages: [tempImg3],
         },
         {
           messageId: 99254743059,

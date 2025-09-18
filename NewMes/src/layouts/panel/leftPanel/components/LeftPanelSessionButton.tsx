@@ -41,7 +41,7 @@ const LeftPanelSessionButton = ({
     <>
       <button
         className={`flex justify-start items-center w-full px-3 py-1 gap-2 rounded-full transition-colors duration-300 ${
-          selected ? "bg-listActive" : ""
+          selected ? "bg-listActive" : "hover:bg-search"
         }`}
         onClick={onClick}
         onMouseEnter={(e) => handleMouseEnter(e)}

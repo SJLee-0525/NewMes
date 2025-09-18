@@ -1,0 +1,27 @@
+@import url("../../styles/animations.css");
+
+dialog.photo-modal {
+  border: none;
+  padding: 0;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: none;
+}
+
+dialog.photo-modal[open] {
+  animation: photoModalSlideUp 0.5s forwards;
+}
+
+dialog.photo-modal.is-closing {
+  animation: photoModalSlideDown 0.5s forwards !important;
+}
+
+dialog.photo-modal::backdrop {
+  animation: fadeBackdrop 0.5s forwards;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+dialog.photo-modal.is-closing::backdrop {
+  animation: fadeBackdropOut 0.5s forwards;
+  background: rgba(0, 0, 0, 0.3);
+}

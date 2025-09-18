@@ -2,6 +2,10 @@ import "@styles/animations.css";
 
 import tempImg from "@datas/cxr_image/cxr_02.jpeg"; // 임시 이미지
 
+import FullScreenPhotos from "@layouts/chat/components/FullScreenPhotos";
+
+import useModalStore from "@stores/modalStore";
+
 import { getFormattedDateTime } from "@utils/formatDate";
 
 interface UserMessageProps {
@@ -13,14 +17,28 @@ interface UserMessageProps {
 const UserMessage = ({ date, file, content }: UserMessageProps) => {
   const formattedDateTime = getFormattedDateTime(date);
 
+  const { openPhotoModal } = useModalStore();
+
+  // 사진 클릭 시 모달 열기
+  function handleOpenPhotoModal() {
+    if (!file || file.length === 0) return;
+
+    openPhotoModal({
+      modalContent: <FullScreenPhotos dateTime={formattedDateTime} photos={file} />,
+    });
+  }
+
   return (
     <div
       title={formattedDateTime}
       className="animate-fade-in flex flex-col justify-between items-end w-fit h-fit p-4 gap-4 bg-inactive rounded-xl"
     >
       {file && file.length > 0 && (
-        <figure className="relative max-w-48 aspect-[15/16] rounded-lg overflow-hidden">
-          <img src={tempImg} alt="첨부파일" className="w-full h-full object-cover" />
+        <figure
+          className="relative max-w-48 aspect-[15/16] rounded-lg overflow-hidden cursor-pointer"
+          onClick={handleOpenPhotoModal}
+        >
+          <img src={file[0] || tempImg} alt="첨부파일" className="w-full h-full object-cover" />
 
           {file.length > 1 && (
             <span className="absolute bottom-2 right-2 px-2 py-1 text-xs font-pre-semi-bold text-white bg-black bg-opacity-50 rounded-full">
