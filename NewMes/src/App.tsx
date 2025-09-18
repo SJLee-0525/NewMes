@@ -1,5 +1,3 @@
-import "@/App.css";
-
 import { useState, useEffect } from "react";
 import { useNavigate, Routes, Route } from "react-router-dom";
 
@@ -64,7 +62,7 @@ const App = () => {
 
   if (!isLoggedIn) {
     return (
-      <div className="flex flex-col w-screen h-screen text-white">
+      <div className="flex flex-col w-screen h-screen">
         <Routes>
           <Route path="/" element={<Login />} />
         </Routes>
@@ -90,7 +88,7 @@ const App = () => {
         </div>
 
         <button
-          className={`absolute ${rightSidebarOpen ? "hidden" : "block"} px-2 py-0.5 z-10 top-8 right-0 bg-mainPurple text-white font-pre-medium rounded-t-md hover:bg-mainPurple/75 transition-all duration-300`}
+          className={`absolute ${rightSidebarOpen ? "hidden" : "block"} px-2 py-0.5 z-10 top-8 right-0 bg-mainPurple text-[#fff] font-pre-medium rounded-t-md hover:bg-mainPurple/75 transition-all duration-300`}
           style={{ transform: "rotate(-90deg)", right: "-20px" }}
           onClick={() => toggleRightSidebar(true)}
         >

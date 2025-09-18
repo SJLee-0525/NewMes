@@ -7,6 +7,7 @@ interface AuthStore {
   user: User | null;
   setUserName: (userData: User | null) => void;
   deleteUser: () => void;
+
   currentTheme: string;
   setCurrentTheme: (themeClass: string) => void;
 }
@@ -21,8 +22,8 @@ const useAuthStore = create<AuthStore>()(
       setUserName: (userData: User | null) => set({ user: userData }),
       deleteUser: () => {
         set({ user: null });
-        localStorage.removeItem("authenticate-storage");
       },
+
       currentTheme: "dark", // 기본 값 (다크)
       setCurrentTheme: (themeClass: string) => {
         set({ currentTheme: themeClass });
@@ -32,6 +33,7 @@ const useAuthStore = create<AuthStore>()(
     {
       name: "authenticate-storage", // 로컬 스토리지에 저장될 키 이름
       storage: createJSONStorage(() => localStorage), // 사용할 스토리지
+
       // partialize 함수의 반환 타입을 명시적으로 지정
       partialize: (state): PersistedAuthState => ({
         user: state.user, // persist할 상태

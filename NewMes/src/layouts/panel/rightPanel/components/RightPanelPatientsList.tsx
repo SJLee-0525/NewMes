@@ -31,7 +31,7 @@ const RightPanelPatientsList = ({ patient }: { patient: PatientListItem }) => {
     <>
       <header className="flex justify-between items-center w-full h-fit">
         <section
-          className="flex justify-start items-center w-full h-fit gap-4 rounded-full bg-inactive cursor-pointer hover:bg-toggleInactive transition-all duration-300 "
+          className="flex justify-start items-center w-full h-fit gap-4 rounded-full bg-inactive cursor-pointer hover:bg-search transition-all duration-300 "
           onClick={handleSelectPatient}
         >
           <section className="flex justify-start items-center w-1/2 h-fit gap-2">

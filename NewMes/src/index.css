@@ -11,6 +11,7 @@
 
   /* Colors */
   --color-white: #ffffff;
+  --color-text: #ffffff;
   --color-coolWhite: #f1f5f9;
   --color-black: #000000;
   --color-light: #f7fafc;
@@ -30,6 +31,38 @@
   --color-topbar: #a89b9b;
   --color-disease1: #ff5e5e;
   --color-disease2: #fff0f0;
+}
+
+html.dark body {
+  background: #070718;
+}
+
+html.light {
+  --color-white: #000000;
+  --color-text: #000000;
+  --color-coolWhite: #1e1e28;
+  --color-black: #ffffff;
+  --color-light: #181824;
+  --color-dark: #f7fafc;
+  --color-icon: #8c8c8c;
+  --color-title: #000000cc;
+  --color-summary: #1e1e28;
+  --color-subSummary: #696969;
+  --color-border: #00000033;
+  --color-unavailable: #8e8ea0;
+  --color-active: #4a4a4a;
+  --color-inactive: #f1f5f9;
+  --color-listActive: #c0c0e5;
+  --color-mainPurple: #5856d6;
+  --color-toggleInactive: #8c8c8c;
+  --color-search: #d8d8e8;
+  --color-topbar: #5a5a5a;
+  --color-disease1: #ff5e5e;
+  --color-disease2: #fff0f0;
+}
+
+html.light body {
+  background: #f7fafc;
 }
 
 @font-face {

@@ -105,7 +105,7 @@ const FullScreenPhotos = ({ dateTime, photos }: { dateTime: string; photos: stri
         {layers.slice(1).map(({ idx, style }) => (
           <div key={`peek-${idx}`} className="absolute inset-0 flex" style={{ zIndex: style.z }} aria-hidden>
             <div
-              className="w-280 max-w-[90vw] h-210 max-h-[70vh] bg-listActive/80 m-auto origin-top-right rounded-2xl shadow-2xl overflow-hidden"
+              className="w-280 max-w-[90vw] h-210 max-h-[70vh] bg-toggleInactive/56 m-auto origin-top-right rounded-2xl shadow-2xl overflow-hidden"
               style={{
                 transform: `translate(${style.tx}px, ${style.ty}px) scale(${style.scale})`,
                 filter: `blur(${style.blur}px)`,
