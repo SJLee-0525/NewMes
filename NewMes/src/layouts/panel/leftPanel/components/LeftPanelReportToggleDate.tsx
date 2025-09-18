@@ -37,6 +37,7 @@ const LeftPanelReportToggleDate = ({ date, reportsOnDate }: { date: string; repo
                 key={report.reportId}
                 label={patientName}
                 subLabel={report.shootingDate}
+                previewLabel={report.disease}
                 selected={selectedReportId.id === report.reportId}
                 onClick={() => setSelectedReportId(report.reportId, patientName)}
               />

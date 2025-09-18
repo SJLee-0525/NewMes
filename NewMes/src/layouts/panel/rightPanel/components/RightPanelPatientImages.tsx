@@ -1,9 +1,9 @@
 import { useState, type MouseEvent } from "react";
 
 import type { PatientListItem, Image } from "@/types/patientsType";
-import type { ImagePreviewProps } from "@/types/componentsProps";
+import type { PreviewProps } from "@/types/componentsProps";
 
-import ImagePreview from "@components/preview/ImagePreview";
+import Preview from "@components/preview/Preview";
 
 import ToggleIcon from "@assets/icons/ToggleIcon";
 import PhotoIcon from "@assets/icons/PhotoIcon";
@@ -30,7 +30,7 @@ const RightPanelPatientImages = ({
   const { selectedPatientId, setSelectedPatientId } = useSystemStore();
 
   // 미리보기 상태
-  const [preview, setPreview] = useState<ImagePreviewProps | null>(null);
+  const [preview, setPreview] = useState<PreviewProps | null>(null);
 
   // 이미지 전체 선택 / 해제
   function handleSelectAll() {
@@ -111,7 +111,7 @@ const RightPanelPatientImages = ({
           ))}
 
           {/* 호버 시 이미지 미리보기 */}
-          {preview && <ImagePreview preview={preview} />}
+          {preview && <Preview type="image" preview={preview} />}
 
           <section className="flex justify-end items-center w-full h-fit py-2">
             <button

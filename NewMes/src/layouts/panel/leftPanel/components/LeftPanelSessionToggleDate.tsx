@@ -42,6 +42,7 @@ const LeftPanelSessionToggleDate = ({ date, sessionsOnDate }: { date: string; se
             <LeftPanelSessionButton
               key={session.id}
               label={session.contentSummary}
+              previewLabel={session.patientName}
               selected={selectedSessionId === session.id}
               onClick={() => handleClickSession(session.id)}
             />
