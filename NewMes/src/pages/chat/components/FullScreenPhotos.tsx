@@ -92,7 +92,7 @@ const FullScreenPhotos = ({ dateTime, photos }: { dateTime: string; photos: stri
 
         <button
           onClick={closePhotoModal}
-          className="p-2 rounded-full bg-transparent hover:bg-red-500 transition-color duration-300 focus:outline-none cursor-pointer pointer-events-auto"
+          className="p-2 rounded-xl bg-transparent hover:bg-red-500 transition-color duration-300 focus:outline-none cursor-pointer pointer-events-auto"
           aria-label="Close"
         >
           <CloseIcon width={24} height={24} strokeColor="white" />
@@ -149,7 +149,7 @@ const FullScreenPhotos = ({ dateTime, photos }: { dateTime: string; photos: stri
       <div className="absolute inset-0 flex items-center justify-between px-8 z-100 pointer-events-none">
         <button
           onClick={goPrev}
-          className="p-2 rounded-full bg-black/40 hover:bg-black/70 transition-color duration-300 focus:outline-none cursor-pointer pointer-events-auto"
+          className="p-2 rounded-full bg-black/40 hover:bg-toggleInactive/70 transition-color duration-300 focus:outline-none cursor-pointer pointer-events-auto"
           aria-label="Previous"
         >
           <ArrowLeftIcon width={28} height={28} strokeColor="white" />
@@ -157,7 +157,7 @@ const FullScreenPhotos = ({ dateTime, photos }: { dateTime: string; photos: stri
 
         <button
           onClick={goNext}
-          className="p-2 rounded-full bg-black/40 hover:bg-black/70 transition-color duration-300 focus:outline-none cursor-pointer pointer-events-auto"
+          className="p-2 rounded-full bg-black/40 hover:bg-toggleInactive/70 transition-color duration-300 focus:outline-none cursor-pointer pointer-events-auto"
           aria-label="Next"
         >
           <ArrowRightIcon width={28} height={28} strokeColor="white" />

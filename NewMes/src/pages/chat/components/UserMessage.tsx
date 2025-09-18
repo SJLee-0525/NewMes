@@ -2,7 +2,7 @@ import "@styles/animations.css";
 
 import tempImg from "@datas/cxr_image/cxr_02.jpeg"; // 임시 이미지
 
-import FullScreenPhotos from "@layouts/chat/components/FullScreenPhotos";
+import FullScreenPhotos from "@pages/chat/components/FullScreenPhotos";
 
 import useModalStore from "@stores/modalStore";
 

@@ -10,6 +10,11 @@ import App from "@/App.tsx";
 async function deferRender() {
   const { worker } = await import("./mocks/browser.js");
   await worker.start();
+
+  navigator.serviceWorker.ready.then((r) => {
+    console.log("SW scope:", r.scope);
+  });
+  console.log("MSW script reachable?", await fetch("/mockServiceWorker.js").then((r) => r.ok));
 }
 
 deferRender().then(() => {

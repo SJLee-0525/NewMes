@@ -129,10 +129,25 @@
   }
 }
 
+@keyframes login-slideUp {
+  from {
+    transform: translateY(-4%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .slide-up {
   animation: slideUp 0.3s ease-in-out forwards;
 }
 
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
+}
+
+.login {
+  animation: login-slideUp 0.5s ease-in-out forwards;
 }

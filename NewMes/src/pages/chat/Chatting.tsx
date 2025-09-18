@@ -5,8 +5,8 @@ import { getSessionDetailApi, getPatientListApi } from "@apis/userApi";
 
 import type { Message, Session } from "@/types/sessionsType";
 
-import UserMessage from "@layouts/chat/components/UserMessage";
-import AssistantMessage from "@layouts/chat/components/AssistantMessage";
+import UserMessage from "@pages/chat/components/UserMessage";
+import AssistantMessage from "@pages/chat/components/AssistantMessage";
 
 import ChatInput from "@components/input/ChatInput";
 

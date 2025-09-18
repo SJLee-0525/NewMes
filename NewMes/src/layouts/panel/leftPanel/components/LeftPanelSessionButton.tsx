@@ -40,7 +40,7 @@ const LeftPanelSessionButton = ({
   return (
     <>
       <button
-        className={`flex justify-start items-center w-full px-3 py-1 gap-2 rounded-full transition-colors duration-300 ${
+        className={`flex justify-start items-center w-full px-3 py-1 gap-2 rounded-full transition-colors duration-300 cursor-pointer ${
           selected ? "bg-listActive" : "hover:bg-search"
         }`}
         onClick={onClick}

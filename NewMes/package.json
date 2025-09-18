@@ -47,5 +47,10 @@
     "eslint-plugin-prettier@5.5.4": {
       "unplugged": true
     }
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

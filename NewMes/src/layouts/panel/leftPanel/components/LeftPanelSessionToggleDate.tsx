@@ -31,7 +31,10 @@ const LeftPanelSessionToggleDate = ({ date, sessionsOnDate }: { date: string; se
 
   return (
     <div className="font-pre-regular text-md">
-      <span className="text-unavailable pl-3 cursor-pointer" onClick={handleToggle}>
+      <span
+        className="pl-3 text-unavailable hover:text-mainPurple transition-colors duration-300 cursor-pointer"
+        onClick={handleToggle}
+      >
         <i>{formattedDate}</i>
       </span>
 
