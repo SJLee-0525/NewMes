@@ -1,6 +1,14 @@
 import type { IconProps } from "@/types/iconProps";
 
+import useAuthStore from "@stores/authStore";
+
 const ArrowLeftIcon = ({ width = 22, height = 22, strokeColor, className, onClick }: IconProps) => {
+  const { currentTheme } = useAuthStore();
+
+  if (!strokeColor) {
+    strokeColor = currentTheme === "dark" ? "#ffffff" : "#000000";
+  }
+
   return (
     <svg
       width={width}

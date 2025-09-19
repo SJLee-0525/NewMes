@@ -1,6 +1,14 @@
 import type { IconProps } from "@/types/iconProps";
 
+import useAuthStore from "@stores/authStore";
+
 const PhotoIcon = ({ width, height, strokeColor }: IconProps) => {
+  const { currentTheme } = useAuthStore();
+
+  if (!strokeColor) {
+    strokeColor = currentTheme === "dark" ? "#ffffff" : "#000000";
+  }
+
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 25 24" fill="none">
       <path

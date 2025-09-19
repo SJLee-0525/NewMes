@@ -1,0 +1,274 @@
+export const NEWS_DATA = {
+  status: "ok",
+  totalResults: 36,
+  articles: [
+    {
+      source: {
+        id: "nbc-news",
+        name: "NBC News",
+      },
+      author: "Patrick Smith",
+      title: "Brett James, songwriter of 'Jesus, Take The Wheel,' confirmed dead in plane crash - NBC News",
+      description:
+        'Brett James, the Grammy-winning writer of "Jesus, Take the Wheel" and scores of other hit country and pop songs, has died in a plane crash, authorities confirmed Friday morning.',
+      url: "https://www.nbcnews.com/news/us-news/brett-james-songwriter-jesus-take-wheel-many-hits-feared-dead-plane-cr-rcna232358",
+      urlToImage:
+        "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-09/250919-brett-james-rs-33341e.jpg",
+      publishedAt: "2025-09-19T11:03:20Z",
+      content:
+        'Brett James, the Grammy-winning writer of "Jesus, Take the Wheel" and scores of other hit country and pop songs, has died in a plane crash, authorities confirmed Friday morning. \r\nThe North Carolina … [+2431 chars]',
+    },
+    {
+      source: {
+        id: "associated-press",
+        name: "Associated Press",
+      },
+      author: "Andrew Wilks",
+      title: "British spy chief says he sees no evidence Putin wants to negotiate peace in Ukraine - AP News",
+      description:
+        'The head of Britain\'s MI6, Richard Moore, says there is "absolutely no evidence" that Russia\'s President Vladimir Putin wants to negotiate peace in Ukraine. Speaking Friday, Moore accused Putin of "stringing us along" and said the Russian leader underestimate…',
+      url: "https://apnews.com/article/british-intelligence-mi6-russia-war-443df0c37ff2254fcc33d5425e3beaa6",
+      urlToImage:
+        "https://dims.apnews.com/dims4/default/d87a59f/2147483647/strip/true/crop/5287x2974+0+276/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F0d%2Fc5%2F48f1e72062a9908fbc813cc54365%2F913ba29d14434e2093b2ebdf3be9ad67",
+      publishedAt: "2025-09-19T10:28:00Z",
+      content:
+        "ISTANBUL (AP) There is absolutely no evidence that Russias President Vladimir Putin wants to negotiate peace in Ukraine, the head of Britains foreign intelligence agency said Friday in an outgoing sp… [+3167 chars]",
+    },
+    {
+      source: {
+        id: null,
+        name: "CNBC",
+      },
+      author: "Anniek Bao",
+      title: "Ray Dalio says gold, non-fiat currencies will be stronger stores of value as U.S. debt mounts - CNBC",
+      description:
+        "The veteran investor warned that all currencies risk losing their appeal as store of value, making gold and non-fiat currencies stronger repository of money.",
+      url: "https://www.cnbc.com/2025/09/19/ray-dalio-says-gold-non-fiat-currencies-will-be-stronger-stores-of-value-as-us-debt-mounts.html",
+      urlToImage:
+        "https://image.cnbcfm.com/api/v1/image/108201070-1758254993442-gettyimages-2154149172-dd1_8364_gepi8bk2.jpeg?v=1758255011&w=1920&h=1080",
+      publishedAt: "2025-09-19T10:13:34Z",
+      content:
+        "Bridgewater founder Ray Dalio said Friday that gold and non-fiat currencies will become stronger stores of value as major currencies face devaluation risks amid mounting debt pressures globally.\r\nSpe… [+2277 chars]",
+    },
+    {
+      source: {
+        id: "cbs-news",
+        name: "CBS News",
+      },
+      author: null,
+      title:
+        "A woman vanished in Oregon in 1974. Now, remains found 2 years later have been identified as her, through DNA. - CBS News",
+      description:
+        "Marion McWhorter went missing in Oregon in 1974. Now, remains found two years later have been identified as her, through DNA analysis.",
+      url: "https://www.cbsnews.com/news/marion-mcwhorter-missing-since-1974-remains-identified-dna/",
+      urlToImage:
+        "https://assets1.cbsnewsstatic.com/hub/i/r/2025/09/19/72ac9aaa-da90-47c5-aea4-8c1ded7dfb9d/thumbnail/1200x630/9e29b230e0343d8e8e24cb14c64441ad/ap25261834838574.jpg",
+      publishedAt: "2025-09-19T10:01:00Z",
+      content:
+        "Portland, Oregon — Valerie Nagle spent decades wondering what happened to her older sister, who was last seen in Oregon in 1974. She searched online databases of unidentified persons cases looking fo… [+4931 chars]",
+    },
+    {
+      source: {
+        id: null,
+        name: "NPR",
+      },
+      author: "",
+      title: "Grocery prices have jumped up, and there's no relief in sight - NPR",
+      description:
+        "Groceries saw their biggest jump in nearly three years last month, a worrisome sign for inflation-weary shoppers. Tariffs are contributing to higher prices for imported staples like bananas and coffee.",
+      url: "https://www.npr.org/2025/09/19/nx-s1-5539547/grocery-prices-tariffs-food-inflation",
+      urlToImage:
+        "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5333x3000+0+0/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F1a%2F0b%2F54de3578407cae7eb14e2f5703dd%2Fcost-of-living-groceries-edit.jpg",
+      publishedAt: "2025-09-19T09:30:00Z",
+      content:
+        "NPR's series Cost of Living: The Price We Pay is examining what's driving price increases and how people are coping after years of stubborn inflation. How are higher prices changing the way you live?… [+4075 chars]",
+    },
+    {
+      source: {
+        id: "bloomberg",
+        name: "Bloomberg",
+      },
+      author: "Ye Xie, Carter Johnson, Anya Andrianova",
+      title: "‘Hedge America’ Trade Fuels Global Rush Into Short-Dollar Wagers - Bloomberg.com",
+      description:
+        "It turns out that all the “Sell America” angst swirling in markets earlier this year was misplaced.",
+      url: "https://www.bloomberg.com/news/articles/2025-09-18/-hedge-america-trade-fuels-global-rush-into-short-dollar-wagers",
+      urlToImage: "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iFts1mZ0wlHw/v0/1200x800.jpg",
+      publishedAt: "2025-09-19T09:18:02Z",
+      content:
+        "It turns out that all the Sell America angst swirling in markets earlier this year was misplaced.\r\nThe real mantra from global investors is more like Hedge America that is, keep snapping up US stocks… [+119 chars]",
+    },
+    {
+      source: {
+        id: "politico",
+        name: "Politico",
+      },
+      author: "Liz Crampton, Gregory Svirnovskiy",
+      title: "Florida plans to stop school vaccine mandates. These states could follow. - Politico",
+      description: "One anti-vax attorney called mandates “the tool of bullies, criminals and dictators.”",
+      url: "https://www.politico.com/news/2025/09/19/rfk-vaccine-mandate-maha-florida-00572512",
+      urlToImage:
+        "https://www.politico.com/dims4/default/resize/1200/quality/90/format/jpg?url=https%3A%2F%2Fstatic.politico.com%2Fbb%2F12%2Fd61ec40a48dab073c9f9013ee392%2F2025-0909-maha-francis-10-1.jpg",
+      publishedAt: "2025-09-19T09:00:00Z",
+      content:
+        "Theyre not going to want to run against the presidents policies, on one hand, but on the other hand, they also dont want to eliminate the constituency which supports childhood vaccines, Dorit Reiss, … [+7138 chars]",
+    },
+    {
+      source: {
+        id: "politico",
+        name: "Politico",
+      },
+      author: "Felicia Schwartz, Stefanie Bolzen, Clea Caulcutt, Esther Webber",
+      title: "Europe, Canada, Saudi Arabia poke at Trump with Palestinian statehood - Politico",
+      description:
+        "France and others frustrated with U.S. inaction on Israel have few options to reorient the conflict between Israel and the Palestinians",
+      url: "https://www.politico.com/news/2025/09/19/palestine-statehood-trump-un-00572206",
+      urlToImage:
+        "https://www.politico.com/dims4/default/resize/1200/quality/90/format/jpg?url=https%3A%2F%2Fstatic.politico.com%2F1a%2Fa7%2F529a9ff741ebac7422827d5a3ddc%2Fisrael-palestinians-france-41134.jpg",
+      publishedAt: "2025-09-19T09:00:00Z",
+      content:
+        "Others, like Germany, are expected to attend in support of a two-state solution the creation of an independent Palestinian state alongside Israel but not join the declaration.\r\nWe need to push back a… [+10540 chars]",
+    },
+    {
+      source: {
+        id: "the-washington-post",
+        name: "The Washington Post",
+      },
+      author: "Tim Craig, Praveena Somasundaram, Anumita Kaur",
+      title: "Shooter who killed 3 Pa. officers was accused of stalking ex, officials say - The Washington Post",
+      description:
+        "Matthew J. Ruth ambushed the officers when they arrived at a house where his ex-girlfriend’s mother said he had been peering in with binoculars, according to officials and court documents.",
+      url: "https://www.washingtonpost.com/nation/2025/09/18/matthew-ruth-york-pennsylvania-shooting/",
+      urlToImage:
+        "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/SBUCXVE3L6VNJ7ATYLAZAOWNJ4_size-normalized.jpg&w=1440",
+      publishedAt: "2025-09-19T06:14:27Z",
+      content:
+        "YORK, Pa. The gunman who killed three police officers and injured two others Wednesday had been accused of stalking a former partner the night before the shooting, officials said.\r\nMatthew J. Ruth, 2… [+260 chars]",
+    },
+    {
+      source: {
+        id: "cbs-news",
+        name: "CBS News",
+      },
+      author: "Kierra  Frazier",
+      title:
+        "Authorities find remains they think are fugitive Travis Decker, accused of killing his 3 daughters in Washington state, officials say - CBS News",
+      description:
+        "Authorities had been searching for Travis Decker since May 30, when he didn't return his three daughters to their mother's home in Wenatchee, Washington.",
+      url: "https://www.cbsnews.com/news/travis-decker-human-remains-washington-state-murder-3-daughters/",
+      urlToImage:
+        "https://assets2.cbsnewsstatic.com/hub/i/r/2025/06/30/3ab96f67-b153-49af-b9ca-753ec99845c6/thumbnail/1200x630/488d21cd9b14c88f60a4a1184f023afe/travis-decker.jpg",
+      publishedAt: "2025-09-19T05:21:00Z",
+      content:
+        "Authorities in Washington state have found human remains they believe are those of Travis Decker, the fugitive father accused of killing his three young daughters earlier this year before disappearin… [+2125 chars]",
+    },
+    {
+      source: {
+        id: "associated-press",
+        name: "Associated Press",
+      },
+      author: null,
+      title:
+        "Boston has go-ahead basket with 7.4 seconds left as Fever beat Dream 87-85 to reach WNBA semifinals - AP News",
+      description:
+        "Aliyah Boston made the go-ahead basket with 7.4 seconds left, Lexie Hull stole the ensuing inbounds play and the Indiana Fever beat the Atlanta Dream 87-85 to advance to the WNBA semifinals. Despite missing Caitlin Clark among its injured players, Indiana clo…",
+      url: "https://apnews.com/article/fever-dream-score-6f4823e740c39c107689b3487377633a",
+      urlToImage:
+        "https://dims.apnews.com/dims4/default/802af6e/2147483647/strip/true/crop/3914x2202+0+204/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F0c%2F76%2Ff275ea4eabcb6eacda37248e10e4%2F453fdaf057864f0c8b2dcb149deb4188",
+      publishedAt: "2025-09-19T04:13:00Z",
+      content:
+        "COLLEGE PARK, Ga. (AP) Aliyah Boston made the go-ahead basket with 7.4 seconds left, Lexie Hull stole the ensuing inbounds pass and the Indiana Fever beat the No. 3-seeded Atlanta Dream 87-85 on Thur… [+1582 chars]",
+    },
+    {
+      source: {
+        id: null,
+        name: "Rolling Stone",
+      },
+      author: "Rob Sheffield",
+      title: "Cardi B Is Back and Out For Blood on ‘Am I the Drama?’ - Rolling Stone",
+      description: "Cardi B's 'Am i the Drama?' reviewed: The superstar is back and out for blood",
+      url: "http://www.rollingstone.com/music/music-album-reviews/cardi-b-am-i-the-drama-review-1235430895/",
+      urlToImage:
+        "https://www.rollingstone.com/wp-content/uploads/2025/09/cardi-b-album-review.jpg?crop=0px%2C84px%2C1800px%2C1015px&resize=1600%2C900",
+      publishedAt: "2025-09-19T04:00:00Z",
+      content:
+        "She’s baaaaack. Cardi B has finally returned with Am I the Drama?, one of the most hotly awaited second albums in history. Incredibly, it’s been seven years since the Bronx queen crashed into the mus… [+6310 chars]",
+    },
+    {
+      source: {
+        id: null,
+        name: "NBCSports.com",
+      },
+      author: "Charean Williams",
+      title: "Thursday Night Football: Bills get help from Dolphins in 31-21 win - NBC Sports",
+      description: "Miscues by Zach Sieler and Tua Tagovailoa sunk the Dolphins' upset bid in the fourth quarter.",
+      url: "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/thursday-night-football-bills-get-help-from-dolphins-in-31-21-win",
+      urlToImage:
+        "https://nbcsports.brightspotcdn.com/dims4/default/a5e4381/2147483647/strip/true/crop/4366x2456+0+0/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fc6%2F10%2Fbda3daef45f58f920032e44333c6%2Fhttps-delivery-gettyimages.com%2Fdownloads%2F2236184785",
+      publishedAt: "2025-09-19T03:16:21Z",
+      content:
+        "The Dolphins made Thursday Night Football more of a game than perhaps anyone thought. But in the end, the Dolphins do what bad teams do: They beat themselves.\r\nDolphins defensive tackle Zach Sieler h… [+1726 chars]",
+    },
+    {
+      source: {
+        id: "abc-news",
+        name: "ABC News",
+      },
+      author: "ABC News",
+      title: "Trump poised to fire US attorney for resisting effort to charge NY AG Letitia James: Sources - ABC News",
+      description: null,
+      url: "https://abcnews.go.com/US/trump-poised-fire-us-attorney-resisting-effort-charge/story?id\\\\u003d125700904",
+      urlToImage: null,
+      publishedAt: "2025-09-19T03:00:58Z",
+      content: null,
+    },
+    {
+      source: {
+        id: "the-times-of-india",
+        name: "The Times of India",
+      },
+      author: "TOI Lifestyle Desk",
+      title:
+        "Colon cancer: THIS common over-the-counter medication slashes risk of colorectal cancer recurrence in hal - Times of India",
+      description:
+        "A groundbreaking study reveals that a daily low dose of aspirin can significantly reduce the risk of colorectal cancer recurrence by approximately 55%",
+      url: "https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/colon-cancer-this-common-over-the-counter-medication-slashes-risk-of-colorectal-cancer-recurrence-in-half/articleshow/123988065.cms",
+      urlToImage:
+        "https://static.toiimg.com/thumb/msid-123988049,width-1070,height-580,imgsize-22276,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+      publishedAt: "2025-09-19T02:21:00Z",
+      content: null,
+    },
+    {
+      source: {
+        id: null,
+        name: "Colorado Public Radio",
+      },
+      author: "Sandy Battulga, Molly Cruse, Tony Gorman, Kevin J. Beaty",
+      title:
+        "Thousands attend Turning Point vigil for Charlie Kirk at Colorado State University - Colorado Public Radio",
+      description:
+        "Turning Point USA held a vigil for Kirk after his death last week. There were also other events around it, including a free speech event.",
+      url: "https://www.cpr.org/2025/09/18/charlie-kirk-vigil-csu-fort-collins/",
+      urlToImage: "https://wp-cpr.s3.amazonaws.com/uploads/2025/09/DNVR2829.jpg",
+      publishedAt: "2025-09-19T01:52:30Z",
+      content:
+        "Updated at 7:59 p.m. on Thursday, Sept. 18, 2025. \r\nMore than 7,000 people filled Colorado State Universitys Canvas Stadium in Fort Collins Thursday evening as students and community members attended… [+13364 chars]",
+    },
+    {
+      source: {
+        id: "wired",
+        name: "Wired",
+      },
+      author: "Emily Mullin",
+      title: "Vaccine Panel Stacked by RFK Jr. Recommends Delaying MMRV Immunization - WIRED",
+      description:
+        "The vaccine advisory group ACIP, not all members of which seemed to know what the group does, recommended to the CDC that combined MMRV shots not be given before age 4.",
+      url: "https://www.wired.com/story/vaccine-panel-stacked-by-rfk-jr-recommends-delaying-mmrv-immunization/",
+      urlToImage:
+        "https://media.wired.com/photos/68ccc7ba6f221c14468868d2/191:100/w_1280,c_limit/Vaccine-Panel-RFK-Delaying-MMRV-Science-2235105504.jpg",
+      publishedAt: "2025-09-18T23:59:00Z",
+      content:
+        "A federal vaccine advisory committee made up of members hand-picked by Health and Human Services secretary Robert F. Kennedy Jr. recommended in an 8-3 vote on Thursday that the combined measles, mump… [+3301 chars]",
+    },
+  ],
+};

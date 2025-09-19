@@ -1,7 +1,15 @@
 import type { IconProps } from "@/types/iconProps";
 
+import useAuthStore from "@stores/authStore";
+
 // 아이콘 변경 필요
 const DownLoadIcon = ({ width = 28, height = 28, strokeColor, onClick }: IconProps) => {
+  const { currentTheme } = useAuthStore();
+
+  if (!strokeColor) {
+    strokeColor = currentTheme === "dark" ? "#ffffff" : "#000000";
+  }
+
   return (
     <svg
       width={width}

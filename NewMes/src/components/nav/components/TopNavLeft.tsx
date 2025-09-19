@@ -43,9 +43,9 @@ const TopNavLeft = () => {
 
       {/* 나중에 아이콘 꼭 바꿀 것. 버튼으로 감싸서 호버 효과 주는 거 잊지 말기 */}
       {leftSidebarOpen ? (
-        <CloseIcon width={40} height={40} strokeColor={"#ffffff"} onClick={toggleLeftSidebar} />
+        <CloseIcon width={40} height={40} onClick={toggleLeftSidebar} strokeColor="#7D7983" />
       ) : (
-        <MenuIcon width={40} height={40} strokeColor={"#ffffff"} onClick={toggleLeftSidebar} />
+        <MenuIcon width={40} height={40} onClick={toggleLeftSidebar} />
       )}
     </section>
   );

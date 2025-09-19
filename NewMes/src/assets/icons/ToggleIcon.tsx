@@ -1,5 +1,7 @@
 import type { IconProps } from "@/types/iconProps";
 
+import useAuthStore from "@stores/authStore";
+
 interface ToggleIconProps extends IconProps {
   isSelected: boolean;
 }
@@ -13,6 +15,12 @@ const ToggleIcon = ({
   onClick,
   isSelected,
 }: ToggleIconProps) => {
+  const { currentTheme } = useAuthStore();
+
+  if (!strokeColor) {
+    strokeColor = currentTheme === "dark" ? "#ffffff" : "#000000";
+  }
+
   return (
     <svg
       width={width}

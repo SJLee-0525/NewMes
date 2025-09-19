@@ -44,14 +44,14 @@ html.light {
   --color-black: #ffffff;
   --color-light: #181824;
   --color-dark: #f7fafc;
-  --color-icon: #8c8c8c;
+  --color-icon: #606060;
   --color-title: #000000cc;
   --color-summary: #1e1e28;
   --color-subSummary: #696969;
   --color-border: #00000033;
   --color-unavailable: #8e8ea0;
   --color-active: #4a4a4a;
-  --color-inactive: #f1f5f9;
+  --color-inactive: #eeeeee;
   --color-listActive: #c0c0e5;
   --color-mainPurple: #5856d6;
   --color-toggleInactive: #8c8c8c;

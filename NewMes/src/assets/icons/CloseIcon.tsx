@@ -1,13 +1,14 @@
 import type { IconProps } from "@/types/iconProps";
 
-const CloseIcon = ({
-  width = 24,
-  height = 24,
-  strokeColor = "white",
-  strokeWidth = 2,
-  className,
-  onClick,
-}: IconProps) => {
+import useAuthStore from "@stores/authStore";
+
+const CloseIcon = ({ width = 24, height = 24, strokeColor = "", strokeWidth = 2, className, onClick }: IconProps) => {
+  const { currentTheme } = useAuthStore();
+
+  if (!strokeColor) {
+    strokeColor = currentTheme === "dark" ? "#ffffff" : "#000000";
+  }
+
   return (
     <svg
       width={width}

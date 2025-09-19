@@ -99,11 +99,11 @@ const RightPanelPatientImages = ({
               <ToggleIcon
                 width={24}
                 height={24}
-                strokeColor={selectedPatientId.images.some((img) => img.id === image.id) ? "#5856D6" : "#ffffff"}
+                strokeColor={selectedPatientId.images.some((img) => img.id === image.id) ? "#5856D6" : ""}
                 className="p-1"
                 isSelected={selectedPatientId.images.some((img) => img.id === image.id)}
               />
-              <PhotoIcon width={20} height={20} strokeColor="#ffffff" className="" />
+              <PhotoIcon width={20} height={20} className="" />
               <span className="font-pre-semi-bold text-sm text-white whitespace-nowrap">
                 {image.filename}
                 <small className="ml-3 text-icon">({image.date})</small>

@@ -4,6 +4,9 @@ import { SESSIONS } from "@datas/SESSIONS";
 // @ts-ignore
 import { REPORTS } from "@datas/REPORTS";
 import { PATIENTS } from "@datas/PATIENTS";
+import { NEWS_DATA } from "@datas/NEWS";
+
+const { VITE_NEWS_API_KEY } = import.meta.env;
 
 const handlers = [
   // 대화 목록 조회
@@ -86,6 +89,16 @@ const handlers = [
 
     // return HttpResponse.json([]);
     return HttpResponse.json(patientsList);
+  }),
+
+  // 최신 뉴스 목록 조회
+  http.get(`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${VITE_NEWS_API_KEY}`, () => {
+    return HttpResponse.json(NEWS_DATA);
+    // return HttpResponse.json({
+    //   status: "ok",
+    //   totalResults: 0,
+    //   articles: [],
+    // });
   }),
 ];
 export default handlers;

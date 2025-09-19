@@ -40,7 +40,6 @@ const LeftPanelNav = ({ onPrint }: { onPrint: () => void }) => {
           <ArrowLeftIcon
             width={44}
             height={44}
-            strokeColor="#ffffff"
             className="rounded-full transition-all duration-300 hover:bg-toggleInactive"
             onClick={() => handleClick("report")}
           />
@@ -74,7 +73,6 @@ const LeftPanelNav = ({ onPrint }: { onPrint: () => void }) => {
           <DownLoadIcon
             width={36}
             height={36}
-            strokeColor="#ffffff"
             className="rounded-full transition-all duration-300 hover:bg-toggleInactive"
             onClick={onPrint}
           />
@@ -82,7 +80,6 @@ const LeftPanelNav = ({ onPrint }: { onPrint: () => void }) => {
           <PlusIcon
             width={40}
             height={40}
-            strokeColor="#ffffff"
             className="rounded-full transition-all duration-300 hover:bg-toggleInactive"
             onClick={handleClickNewChat}
           />

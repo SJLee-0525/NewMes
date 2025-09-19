@@ -129,13 +129,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
 
               <div className="group absolute inset-0 w-full h-full">
                 <span className="absolute top-1 right-1 w-fit h-fit aspect-[1/1] p-1 bg-black bg-opacity-50 text-white rounded-full transition-opacity hover:bg-opacity-75 opacity-0 group-hover:opacity-100">
-                  <CloseIcon
-                    width={20}
-                    height={20}
-                    strokeColor="white"
-                    strokeWidth={3}
-                    onClick={() => handleRemoveImage(idx)}
-                  />
+                  <CloseIcon width={20} height={20} strokeWidth={3} onClick={() => handleRemoveImage(idx)} />
                 </span>
               </div>
             </div>

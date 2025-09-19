@@ -39,10 +39,10 @@ const RightPanelInput = ({ onUpdate }: { onUpdate: (query: string) => void }) =>
       />
 
       <figure
-        className="flex justify-center items-center p-1 rounded-full bg-white cursor-pointer"
+        className="flex justify-center items-center p-1 rounded-full bg-[#fff] cursor-pointer"
         onClick={handleClearInput}
       >
-        <CloseIcon width={12} height={12} strokeColor="#000000" strokeWidth={2.5} />
+        <CloseIcon width={12} height={12} strokeColor="#000" />
       </figure>
     </section>
   );

@@ -38,7 +38,7 @@ const RightPanelPatientsList = ({ patient }: { patient: PatientListItem }) => {
             <ToggleIcon
               width={36}
               height={36}
-              strokeColor={selectedPatientId.id === patient.id ? "#5856D6" : "#ffffff"}
+              strokeColor={selectedPatientId.id === patient.id ? "#5856D6" : ""}
               className="p-2"
               isSelected={selectedPatientId.id === patient.id}
             />
@@ -57,7 +57,6 @@ const RightPanelPatientsList = ({ patient }: { patient: PatientListItem }) => {
           <ArrowDownIcon
             width={36}
             height={36}
-            strokeColor="#ffffff"
             className="rounded-full cursor-pointer hover:bg-toggleInactive transition-all duration-300"
             onClick={() => setIsExpanded(false)}
           />
@@ -65,7 +64,6 @@ const RightPanelPatientsList = ({ patient }: { patient: PatientListItem }) => {
           <ArrowRightIcon
             width={36}
             height={36}
-            strokeColor="#ffffff"
             className="rounded-full cursor-pointer hover:bg-toggleInactive transition-all duration-300"
             onClick={() => setIsExpanded(true)}
           />
