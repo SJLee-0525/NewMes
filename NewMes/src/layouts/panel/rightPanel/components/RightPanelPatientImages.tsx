@@ -74,14 +74,15 @@ const RightPanelPatientImages = ({
   }
 
   return (
-    <section
-      className={`w-4/5 ${isExpanded ? "max-h-100" : "max-h-0 overflow-hidden"} pl-2 transition-all duration-300`}
-    >
+    <section className={`toggle-fade-in w-4/5 ${isExpanded ? "block" : "hidden"} pl-2 transition-all duration-300`}>
       {images && images.length > 0 ? (
         <div className="flex flex-col justify-between items-center w-full h-fit gap-2">
-          <header className="flex justify-between items-start w-full h-fit pt-2">
+          <header className="flex justify-between items-center w-full h-fit pt-2">
             <h3 className="font-pre-medium text-lg text-icon">Select images</h3>
-            <button className="font-pre-regular text-sm text-icon hover:underline" onClick={handleSelectAll}>
+            <button
+              className="px-1 py-0.5 font-pre-regular text-sm text-icon hover:bg-border rounded-md transition-color duration-300 cursor-pointer"
+              onClick={handleSelectAll}
+            >
               All
             </button>
           </header>
@@ -115,7 +116,7 @@ const RightPanelPatientImages = ({
 
           <section className="flex justify-end items-center w-full h-fit py-2">
             <button
-              className="px-4 py-0.5 rounded-full font-pre-semi-bold text-white text-sm"
+              className="px-4 py-0.5 rounded-full font-pre-semi-bold text-white text-sm cursor-pointer"
               style={{
                 background: "linear-gradient(to bottom, #5856D6, #3822FF)",
               }}

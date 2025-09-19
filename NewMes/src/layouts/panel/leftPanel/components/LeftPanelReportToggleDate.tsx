@@ -23,14 +23,13 @@ const LeftPanelReportToggleDate = ({ date, reportsOnDate }: { date: string; repo
   return (
     <div className="font-pre-regular text-md">
       <span
-        className="pl-3 text-unavailable hover:text-mainPurple transition-colors duration-300 cursor-pointer"
+        className="animate-fade-in pl-3 text-unavailable hover:text-mainPurple transition-colors duration-300 cursor-pointer"
         onClick={handleToggle}
       >
         <i>{formattedDate}</i>
       </span>
 
-      {/* max-h 옵션 나중에 손 봐야함. (애니메이션 관련) */}
-      <ul className={`${isOpen ? "max-h-40" : "max-h-0"} overflow-hidden transition-all duration-300`}>
+      <ul className={`${isOpen ? "block" : "hidden"} h-fit overflow-hidden`}>
         {reportsOnDate &&
           reportsOnDate.map((report) => {
             const patientName = `${report.patientPid.slice(3, 7)} ${report.patientName}`;

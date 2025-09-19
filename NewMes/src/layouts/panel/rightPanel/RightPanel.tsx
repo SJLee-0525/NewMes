@@ -6,13 +6,11 @@ const RightPanel = ({ isOpen }: { isOpen: boolean }) => {
 
   return (
     <aside className={`${rightWidth} h-full pr-6 py-4 transition-all duration-300`}>
-      <section className="flex flex-col justify-between items-center bg-inactive w-full h-full rounded-xl">
-        {isOpen && (
-          <>
-            <RightPanelNav />
-            <RightPanelPatientsContainer />
-          </>
-        )}
+      <section
+        className={`${isOpen ? "flex" : "hidden"} flex-col justify-between items-center bg-inactive w-full h-full rounded-xl`}
+      >
+        <RightPanelNav />
+        <RightPanelPatientsContainer />
       </section>
     </aside>
   );

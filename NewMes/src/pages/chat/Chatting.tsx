@@ -67,12 +67,14 @@ const Chatting = () => {
     });
 
     // 메시지 전송 후 스크롤을 맨 아래로 이동
-    if (messagesContainerRef.current) {
-      messagesContainerRef.current.scrollTo({
-        top: messagesContainerRef.current.scrollHeight,
-        behavior: "smooth",
-      });
-    }
+    setTimeout(() => {
+      if (messagesContainerRef.current) {
+        messagesContainerRef.current.scrollTo({
+          top: messagesContainerRef.current.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+    }, 50);
   }
 
   useEffect(() => {

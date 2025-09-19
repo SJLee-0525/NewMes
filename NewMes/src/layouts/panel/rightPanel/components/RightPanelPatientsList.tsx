@@ -43,12 +43,12 @@ const RightPanelPatientsList = ({ patient }: { patient: PatientListItem }) => {
               isSelected={selectedPatientId.id === patient.id}
             />
 
-            <h2 className="font-pre-semi-bold text-lg text-white whitespace-nowrap">
+            <h2 className="w-fit font-pre-semi-bold text-lg text-white whitespace-nowrap">
               {patient.id} {patient.name}
             </h2>
           </section>
 
-          <span className="px-2.5 font-pre-light text-coolWhite text-sm rounded-full border border-coolWhite">
+          <span className="w-19.5 font-pre-light text-coolWhite text-sm text-center rounded-full border border-coolWhite">
             {patient.age}세 / {patient.gender}
           </span>
         </section>

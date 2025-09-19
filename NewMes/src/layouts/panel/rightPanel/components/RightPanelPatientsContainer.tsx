@@ -29,7 +29,7 @@ const RightPanelPatientsContainer = () => {
   }, [searchInput]);
 
   return (
-    <section className="flex-1 flex flex-col justify-between items-center w-full px-5 gap-2.5 overflow-hidden">
+    <section className="animate-fade-in flex-1 flex flex-col justify-between items-center w-full px-5 gap-2.5 overflow-hidden">
       <RightPanelInput onUpdate={setSearchInput} />
 
       <section className="flex-1 flex flex-col justify-start items-center w-full gap-1.5 overflow-y-auto text-white">
