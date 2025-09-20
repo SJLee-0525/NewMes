@@ -2,7 +2,7 @@ import type { IconProps } from "@/types/iconProps";
 
 import useAuthStore from "@stores/authStore";
 
-const CloseIcon = ({ width = 24, height = 24, strokeColor = "", strokeWidth = 2, className, onClick }: IconProps) => {
+const CloseIcon = ({ width = 24, height = 24, strokeColor = "", className, onClick }: IconProps) => {
   const { currentTheme } = useAuthStore();
 
   if (!strokeColor) {
@@ -11,18 +11,17 @@ const CloseIcon = ({ width = 24, height = 24, strokeColor = "", strokeWidth = 2,
 
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      viewBox="0 0 24 24"
+      viewBox="0 0 20 20"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       className={className}
     >
       <path
-        d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+        d="M4.08859 4.21569L4.14645 4.14645C4.32001 3.97288 4.58944 3.9536 4.78431 4.08859L4.85355 4.14645L10 9.293L15.1464 4.14645C15.32 3.97288 15.5894 3.9536 15.7843 4.08859L15.8536 4.14645C16.0271 4.32001 16.0464 4.58944 15.9114 4.78431L15.8536 4.85355L10.707 10L15.8536 15.1464C16.0271 15.32 16.0464 15.5894 15.9114 15.7843L15.8536 15.8536C15.68 16.0271 15.4106 16.0464 15.2157 15.9114L15.1464 15.8536L10 10.707L4.85355 15.8536C4.67999 16.0271 4.41056 16.0464 4.21569 15.9114L4.14645 15.8536C3.97288 15.68 3.9536 15.4106 4.08859 15.2157L4.14645 15.1464L9.293 10L4.14645 4.85355C3.97288 4.67999 3.9536 4.41056 4.08859 4.21569L4.14645 4.14645L4.08859 4.21569Z"
         fill={strokeColor}
-        strokeWidth={strokeWidth}
       />
     </svg>
   );

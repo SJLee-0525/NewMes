@@ -2,7 +2,7 @@ import type { IconProps } from "@/types/iconProps";
 
 import useAuthStore from "@stores/authStore";
 
-const PlusIcon = ({ width = 24, height = 24, strokeColor = "", strokeWidth = 2, className, onClick }: IconProps) => {
+const PlusIcon = ({ width = 24, height = 24, strokeColor = "", className, onClick }: IconProps) => {
   const { currentTheme } = useAuthStore();
 
   if (!strokeColor) {
@@ -11,16 +11,18 @@ const PlusIcon = ({ width = 24, height = 24, strokeColor = "", strokeWidth = 2, 
 
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      viewBox="0 0 24 24"
+      viewBox="0 0 20 20"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       className={className}
       onClick={onClick}
     >
-      <path d="M12 5V19" stroke={strokeColor} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M5 12H19" stroke={strokeColor} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M10 2.5C10 2.22386 9.77614 2 9.5 2C9.22386 2 9 2.22386 9 2.5V9H2.5C2.22386 9 2 9.22386 2 9.5C2 9.77614 2.22386 10 2.5 10H9V16.5C9 16.7761 9.22386 17 9.5 17C9.77614 17 10 16.7761 10 16.5V10H16.5C16.7761 10 17 9.77614 17 9.5C17 9.22386 16.7761 9 16.5 9H10V2.5Z"
+        fill={strokeColor}
+      />
     </svg>
   );
 };

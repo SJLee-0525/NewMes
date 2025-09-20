@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 
 import CloseIcon from "@assets/icons/CloseIcon";
-import SearchIcon from "@assets/icons/SearchIcon";
+import SendIcon from "@assets/icons/SendIcon";
 import ClipIcon from "@assets/icons/ClipIcon";
 
 import useSystemStore from "@stores/systemStore";
@@ -128,7 +128,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
               <img src={URL.createObjectURL(image)} alt={`Selected ${idx}`} className="w-full h-full object-cover" />
 
               <div className="group absolute inset-0 w-full h-full">
-                <span className="absolute top-1 right-1 w-fit h-fit aspect-[1/1] p-1 bg-black bg-opacity-50 text-white rounded-full transition-opacity hover:bg-opacity-75 opacity-0 group-hover:opacity-100">
+                <span className="absolute top-1 right-1 w-fit h-fit aspect-[1/1] p-1 bg-black bg-opacity-50 text-white rounded-full transition-opacity hover:bg-opacity-75 opacity-0 group-hover:opacity-100 cursor-pointer">
                   <CloseIcon width={20} height={20} strokeWidth={3} onClick={() => handleRemoveImage(idx)} />
                 </span>
               </div>
@@ -148,16 +148,16 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
       />
 
       <div className="flex flex-row-reverse justify-start items-center w-full h-fit gap-2.5">
-        <SearchIcon
-          width={36}
-          height={36}
+        <SendIcon
+          width={40}
+          height={40}
           strokeColor="#8C8C8C"
-          className="p-1 rounded-full cursor-pointer hover:bg-toggleInactive transition-color duration-300"
+          className="p-1.5 rounded-full cursor-pointer hover:bg-toggleInactive transition-color duration-300"
           onClick={handleSubmit}
         />
         <ClipIcon
-          width={36}
-          height={36}
+          width={40}
+          height={40}
           strokeColor="#8C8C8C"
           className="p-1 rounded-full cursor-pointer hover:bg-toggleInactive transition-color duration-300"
           onClick={handleAttachImage}

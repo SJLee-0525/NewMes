@@ -9,6 +9,7 @@ import Chatting from "@pages/chat/Chatting";
 import Dashboard from "@pages/dashboard/Dashboard";
 
 import TopNav from "@components/nav/TopNav";
+import Modal from "@components/modal/Modal";
 import PhotoModal from "@components/modal/PhotoModal";
 
 import useAuthStore from "@stores/authStore";
@@ -98,6 +99,7 @@ const App = () => {
         <RightPanel isOpen={rightSidebarOpen} />
       </div>
 
+      <Modal />
       <PhotoModal />
     </div>
   );
