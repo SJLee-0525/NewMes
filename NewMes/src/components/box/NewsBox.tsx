@@ -13,7 +13,7 @@ const NewsBox = ({ article }: { article: NewsArticle }) => {
 
   return (
     <section
-      className="group flex flex-col justify-start items-center w-full h-full rounded-xl bg-inactive border border-transparent hover:border-mainPurple transition-all duration-300 cursor-pointer"
+      className="group flex flex-col justify-start items-center w-full h-full rounded-xl bg-inactive border border-transparent hover:border-mainPurple/70 transition-all duration-300 cursor-pointer"
       onClick={handleClick}
       role="button"
       tabIndex={0}

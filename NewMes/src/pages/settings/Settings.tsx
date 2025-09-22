@@ -49,7 +49,7 @@ const Settings = () => {
             <span className="font-pre-semi-bold text-white">Theme</span>
             <section className="flex justify-center items-center w-full h-fit gap-6 p-4">
               <figure
-                className={`w-24 h-24 rounded-full ${currentTheme === "light" ? "ring-4 ring-mainPurple" : "ring-0"} transition-all duration-400 cursor-pointer`}
+                className={`w-24 h-24 rounded-full ${currentTheme === "light" ? "ring-4 ring-mainPurple" : "ring-0 hover:ring-3 ring-mainPurple/70"} transition-all duration-400 cursor-pointer`}
                 onClick={() => handleThemeChange("light")}
               >
                 <img
@@ -61,7 +61,7 @@ const Settings = () => {
                 />
               </figure>
               <figure
-                className={`w-24 h-24 rounded-full ${currentTheme === "dark" ? "ring-4 ring-mainPurple" : "ring-0"} transition-all duration-400 cursor-pointer`}
+                className={`w-24 h-24 rounded-full ${currentTheme === "dark" ? "ring-4 ring-mainPurple" : "ring-0 hover:ring-3 ring-mainPurple/70"} transition-all duration-400 cursor-pointer`}
                 onClick={() => handleThemeChange("dark")}
               >
                 <img

@@ -9,8 +9,8 @@ const LeftPanelNavButton = ({
 }) => {
   return (
     <button
-      className={`flex justify-center items-center w-1/2 min-w-20 h-12 px-2 bg-color-dark rounded-xl hover:bg-toggleInactive transition-all duration-300 ${
-        selected ? "bg-active text-black" : "bg-inactive text-coolWhite"
+      className={`flex justify-center items-center w-1/2 min-w-20 h-12 px-2 bg-color-dark rounded-xl transition-all duration-300 cursor-pointer ${
+        selected ? "bg-active text-black" : "bg-inactive text-coolWhite hover:bg-toggleInactive"
       }`}
       onClick={() => onClick(label)}
     >

@@ -9,7 +9,13 @@ const RightPanelNav = () => {
     <nav className="flex justify-between items-center w-full h-fit px-6 py-4">
       <h2 className="text-2xl text-icon font-pre-medium">Patients</h2>
 
-      <MinimizeIcon width={24} height={24} strokeWidth={2.5} onClick={() => toggleRightSidebar(false)} />
+      <MinimizeIcon
+        width={24}
+        height={24}
+        strokeWidth={2.5}
+        onClick={() => toggleRightSidebar(false)}
+        className="cursor-pointer"
+      />
     </nav>
   );
 };

@@ -1,6 +1,6 @@
 import type { IconProps } from "@/types/iconProps";
 
-const MenuIcon = ({ width = 25, height = 24, strokeColor = "#7D7983", onClick }: IconProps) => {
+const MenuIcon = ({ width = 25, height = 24, strokeColor = "#7D7983", className, onClick }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,6 +8,7 @@ const MenuIcon = ({ width = 25, height = 24, strokeColor = "#7D7983", onClick }:
       height={height}
       viewBox="0 0 20 20"
       fill="none"
+      className={className}
       onClick={onClick}
     >
       <path

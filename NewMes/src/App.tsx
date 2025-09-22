@@ -8,6 +8,7 @@ import NewChat from "@pages/chat/NewChat";
 import Chatting from "@pages/chat/Chatting";
 import Dashboard from "@pages/dashboard/Dashboard";
 import Pricing from "@pages/pricing/Pricing";
+import Help from "@pages/help/Help";
 
 import TopNav from "@components/nav/TopNav";
 import Modal from "@components/modal/Modal";
@@ -86,12 +87,12 @@ const App = () => {
             <Route path="chat/:sessionId" element={<Chatting />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="/help" element={<div>Help</div>} />
+            <Route path="/help" element={<Help />} />
           </Routes>
         </div>
 
         <button
-          className={`absolute ${rightSidebarOpen ? "hidden" : "block"} px-2 py-0.5 z-10 top-8 right-0 bg-mainPurple text-[#fff] font-pre-medium rounded-t-md hover:bg-mainPurple/75 transition-all duration-300`}
+          className={`absolute ${rightSidebarOpen ? "hidden" : "block"} px-2 py-0.5 z-10 top-8 right-0 bg-mainPurple text-[#fff] font-pre-medium rounded-t-md hover:bg-mainPurple/75 transition-all duration-300 cursor-pointer`}
           style={{ transform: "rotate(-90deg)", right: "-20px" }}
           onClick={() => toggleRightSidebar(true)}
         >

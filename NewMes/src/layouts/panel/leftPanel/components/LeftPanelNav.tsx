@@ -40,7 +40,7 @@ const LeftPanelNav = ({ onPrint }: { onPrint: () => void }) => {
           <ArrowLeftIcon
             width={40}
             height={40}
-            className="rounded-full transition-all duration-300 hover:bg-toggleInactive"
+            className="rounded-full transition-all duration-300 hover:bg-toggleInactive cursor-pointer"
             onClick={() => handleClick("report")}
           />
         )}
@@ -73,14 +73,14 @@ const LeftPanelNav = ({ onPrint }: { onPrint: () => void }) => {
           <DownLoadIcon
             width={40}
             height={40}
-            className="p-1 rounded-full transition-all duration-300 hover:bg-toggleInactive"
+            className="p-1 rounded-full transition-all duration-300 hover:bg-toggleInactive cursor-pointer"
             onClick={onPrint}
           />
         ) : (
           <PlusIcon
             width={40}
             height={40}
-            className="p-1 rounded-full transition-all duration-300 hover:bg-toggleInactive"
+            className="p-1 rounded-full transition-all duration-300 hover:bg-toggleInactive cursor-pointer"
             onClick={handleClickNewChat}
           />
         )}
