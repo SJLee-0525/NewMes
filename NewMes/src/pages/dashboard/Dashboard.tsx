@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, type WheelEvent } from "react";
 
-import { getLatestNewsApi } from "@apis/newsAPI";
+import { getLatestNewsApi } from "@apis/newsApi";
 
 import type { NewsArticle } from "@/types/newsType";
 

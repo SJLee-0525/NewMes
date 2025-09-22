@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 
+import type { MediType } from "@/types/MediType";
+
+import { getDiseaseList } from "@apis/mediApi";
+
 import CloseIcon from "@assets/icons/CloseIcon";
 import SendIcon from "@assets/icons/SendIcon";
 import ClipIcon from "@assets/icons/ClipIcon";
@@ -17,14 +21,30 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
 
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
+  const [searchDisease, setSearchDisease] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [diseaseList, setDiseaseList] = useState<MediType[]>([]);
+  const [selectedDisease, setSelectedDisease] = useState<number>(0);
+  const [sickType, setSickType] = useState<number>(1); // 1: 3단, 2: 4단
+  const searchTypeRef = useRef<HTMLSelectElement | null>(null);
+
+  const searchRef = useRef<HTMLInputElement | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   // 자동 높이 조절
   function useAutoResizeTextarea(e: React.FormEvent<HTMLTextAreaElement>) {
-    const textarea = e.currentTarget;
+    // 최대 높이 설정
+    const maxHeight = 180; // px
 
-    textarea.style.height = "auto";
-    textarea.style.height = textarea.scrollHeight + "px";
+    const textarea = e.currentTarget;
+    if (textarea.scrollHeight > maxHeight) {
+      textarea.style.height = maxHeight + "px";
+      textarea.style.overflowY = "scroll";
+    } else {
+      textarea.style.height = "auto";
+      textarea.style.height = textarea.scrollHeight + "px";
+    }
   }
 
   // 사진 첨부
@@ -50,8 +70,114 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
     }
   }
 
+  // 검색어 입력 변경
+  function handleSearchInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setSearchQuery(e.target.value);
+  }
+
+  // 질병 검색
+  async function fetchDiseaseList() {
+    try {
+      const diseaseType = searchTypeRef.current?.value || "SICK_NM";
+
+      const diseases = await getDiseaseList({
+        diseaseType,
+        sickType,
+        searchText: searchQuery,
+      });
+
+      setDiseaseList(diseases);
+      setSelectedDisease(0);
+
+      isLoading && setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching disease list:", error);
+    }
+  }
+
+  // 검색어 변경 시 질병 리스트 갱신
+  useEffect(() => {
+    if (isLoading) return;
+
+    const delayDebounceFn = setTimeout(() => {
+      fetchDiseaseList();
+    }, 500);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [searchQuery, sickType]);
+
+  function handleSearchDiseaseKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    switch (e.key) {
+      case "Escape":
+        e.preventDefault();
+
+        setSearchDisease(false);
+        textareaRef.current?.focus();
+        break;
+
+      case "ArrowDown":
+        e.preventDefault();
+
+        if (diseaseList && diseaseList.length > 0 && selectedDisease < diseaseList.length - 1) {
+          setSelectedDisease(selectedDisease + 1);
+        }
+        break;
+
+      case "ArrowUp":
+        e.preventDefault();
+
+        if (diseaseList && diseaseList.length > 0 && selectedDisease > 0) {
+          setSelectedDisease(selectedDisease - 1);
+        }
+        break;
+
+      case "Enter":
+        e.preventDefault();
+
+        if (diseaseList && diseaseList.length > 0) {
+          // Enter가 두 번 호출되는 현상 방지: compositionend 상태에서만 실행
+          if (!(e.nativeEvent as any).isComposing) handleSelectDisease(diseaseList[selectedDisease]);
+        }
+        break;
+    }
+  }
+
+  // 질병 선택
+  function handleSelectDisease(disease: MediType) {
+    if (textareaRef.current) {
+      const currentText = textareaRef.current.value;
+
+      // 기존 텍스트에 질병 정보 추가
+      const sickData = `질병 코드: ${disease.sickCd}, 질병명: ${disease.sickNm}-${disease.sickEngNm}\n`;
+      const newText = currentText ? `${currentText}\n${sickData}` : sickData;
+
+      // 텍스트 영역에 반영 및 높이 조절
+      textareaRef.current.value = newText;
+      useAutoResizeTextarea({ currentTarget: textareaRef.current } as any);
+    }
+
+    // 포커스 이동
+    setTimeout(() => {
+      setSearchDisease(false);
+      setSearchQuery("");
+      setSelectedDisease(0);
+      textareaRef.current?.focus();
+    }, 100);
+  }
+
   // Enter 키로 전송 (Shift + Enter는 줄바꿈)
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.key === "ArrowUp" && e.shiftKey) {
+      e.preventDefault();
+      setSearchDisease(true);
+
+      // 포커스 이동
+      setTimeout(() => {
+        searchRef.current?.focus();
+      }, 100);
+      return;
+    }
+
     if (e.key === "Enter" && !e.shiftKey) {
       if ((e.nativeEvent as any).isComposing) return; // 한글 조합 중이면 무시
       e.preventDefault();
@@ -119,7 +245,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
   }, [selectedPatientId.images]);
 
   return (
-    <section className="flex flex-col justify-between items-start w-full max-w-fullh-fit px-6 py-4 gap-4 bg-inactive rounded-3xl">
+    <section className="relative flex flex-col justify-between items-start w-full max-w-full h-fit px-6 py-4 gap-4 bg-inactive rounded-3xl">
       {/* 첨부된 이미지 미리보기 */}
       {selectedImages && selectedImages.length > 0 && (
         <div className="flex w-full max-w-[30vw] h-fit gap-3 overflow-x-auto">
@@ -135,6 +261,62 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
             </div>
           ))}
         </div>
+      )}
+
+      {/* 질병 검색 */}
+      {searchDisease && (
+        <section className="relative w-full max-w-120">
+          {/* 질병 검색 결과 */}
+          {diseaseList && diseaseList.length > 0 && (
+            <div className="absolute bottom-12 w-full max-h-60 mb-2 z-10 rounded-xl font-pre-regular text-white bg-search overflow-y-auto">
+              {diseaseList.map((disease, idx) => (
+                <div
+                  key={disease.sickCd}
+                  className={`px-3 py-2 ${selectedDisease === idx ? "bg-listActive" : "hover:bg-listActive"} transition-colors duration-200 cursor-pointer break-words whitespace-nowrap line-clamp-1`}
+                  onClick={() => {
+                    handleSelectDisease(disease);
+                  }}
+                >
+                  <strong>[ {disease.sickCd} ]</strong> {disease.sickNm}{" "}
+                  <small className="text-title">{disease.sickEngNm}</small>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* 질병 검색 입력 */}
+          <section className="flex gap-2 rounded-xl bg-search">
+            <input
+              type="text"
+              ref={searchRef}
+              className="w-full h-11 px-3 font-pre-regular text-white focus:outline-none "
+              placeholder="Type disease name..."
+              onKeyDown={handleSearchDiseaseKeyDown}
+              onChange={handleSearchInputChange}
+            />
+
+            <select
+              name="search-type"
+              id="search-type"
+              className="me-2 font-pre-medium text-sm text-white bg-transparent focus:outline-none"
+              ref={searchTypeRef}
+            >
+              <option value="SICK_NM">상병명</option>
+              <option value="SICK_CD">상병코드</option>
+            </select>
+
+            <select
+              name="sick-type"
+              id="sick-type"
+              className="me-3 text-white font-pre-medium text-sm bg-transparent focus:outline-none"
+              value={sickType}
+              onChange={(e) => setSickType(Number(e.target.value))}
+            >
+              <option value="1">3단</option>
+              <option value="2">4단</option>
+            </select>
+          </section>
+        </section>
       )}
 
       <textarea
