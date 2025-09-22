@@ -9,7 +9,7 @@ import ReloadIcon from "@assets/icons/ReloadIcon";
 import NewsBox from "@components/box/NewsBox";
 import Unavailable from "@components/unavailable/Unavailable";
 
-const PULL_THRESHOLD = 84; // 새로고침을 트리거하는 당김 거리 (px)
+const PULL_THRESHOLD = 84; // 새로고침 당김 거리 (px)
 
 const Dashboard = () => {
   const [latestNews, setLatestNews] = useState<NewsArticle[]>([]);
@@ -97,14 +97,14 @@ const Dashboard = () => {
   }
 
   return (
-    <div
-      className="w-full h-full flex px-1 flex-col relative overflow-hidden"
+    <section
+      className="relative flex flex-col w-full h-full px-1 overflow-hidden"
       onMouseUp={() => handleDragEnd()}
       onMouseLeave={() => handleDragEnd()}
       onTouchEnd={() => handleDragEnd()}
     >
       {/* 새로고침 아이콘 */}
-      <div
+      <figure
         className="absolute top-0 left-0 right-0 flex justify-center items-center transition-transform duration-200"
         style={{
           transform: `translateY(${Math.min(pullPosition, PULL_THRESHOLD)}px) translateY(-100%)`,
@@ -117,9 +117,9 @@ const Dashboard = () => {
           className={`p-2 rounded-full bg-mainPurple ${isRefreshing ? "animate-spin" : ""}`}
           style={{ transform: `rotate(${pullPosition * 2}deg)` }}
         />
-      </div>
+      </figure>
 
-      <div
+      <section
         ref={scrollContainerRef}
         className="flex-1 flex flex-col p-4 gap-4 w-full h-full overflow-y-auto"
         onMouseDown={(e) => handleDragStart(e.clientY)}
@@ -137,8 +137,8 @@ const Dashboard = () => {
             <Unavailable type="error" content="News" />
           )}
         </section>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };
 

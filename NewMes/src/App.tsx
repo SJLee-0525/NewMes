@@ -7,6 +7,7 @@ import Login from "@pages/auth/Login";
 import NewChat from "@pages/chat/NewChat";
 import Chatting from "@pages/chat/Chatting";
 import Dashboard from "@pages/dashboard/Dashboard";
+import Pricing from "@pages/pricing/Pricing";
 
 import TopNav from "@components/nav/TopNav";
 import Modal from "@components/modal/Modal";
@@ -84,7 +85,7 @@ const App = () => {
             <Route index element={<NewChat />} />
             <Route path="chat/:sessionId" element={<Chatting />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/pricing" element={<div>Pricing</div>} />
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="/help" element={<div>Help</div>} />
           </Routes>
         </div>
