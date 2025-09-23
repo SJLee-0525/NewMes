@@ -134,7 +134,7 @@ const RightPanelPatientImages = ({
 
           <section className="flex justify-end items-center w-full h-fit py-2">
             <button
-              className="px-4 py-0.5 rounded-full font-pre-semi-bold text-white text-sm cursor-pointer"
+              className="px-4 py-0.5 rounded-full font-pre-semi-bold text-[#fff] text-sm cursor-pointer"
               style={{
                 background: "linear-gradient(to bottom, #5856D6, #3822FF)",
               }}
