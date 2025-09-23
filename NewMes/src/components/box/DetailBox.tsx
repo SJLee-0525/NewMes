@@ -22,7 +22,14 @@ const DetailBox = ({ type, size, title, detail }: DetailBoxProps) => {
           <ul className="w-full h-fit font-pre-semi-bold space-y-1 list-disc list-inside marker:text-white marker:text-base">
             {Object.entries(detail as { [key: string]: string | number }).map(([key, value]) => (
               <li key={key} className="pl-1">
-                {key} : {value}
+                {key} :{" "}
+                {key === "Disease" ? (
+                  <span className="px-1.5 border-2 border-disease1 bg-disease2 rounded-full text-disease1 text-sm whitespace-nowrap">
+                    {value}
+                  </span>
+                ) : (
+                  value
+                )}
               </li>
             ))}
           </ul>
