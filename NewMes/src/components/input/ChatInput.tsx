@@ -51,12 +51,15 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
   // 사진 첨부
   function handleAttachImage() {
     const input = document.createElement("input");
+
     input.type = "file";
     input.accept = "image/*";
+    input.multiple = true;
+
     input.onchange = (e: Event) => {
       const target = e.target as HTMLInputElement;
-      if (target.files && target.files[0]) {
-        setSelectedImages([...(selectedImages || []), target.files[0]]);
+      if (target.files && target.files.length > 0) {
+        setSelectedImages([...(selectedImages || []), ...Array.from(target.files)]);
       }
     };
     input.click();

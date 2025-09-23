@@ -73,6 +73,24 @@ const RightPanelPatientImages = ({
     setPreview(null);
   }
 
+  // 파일탐색기 열기
+  function handleLoadImages() {
+    const input = document.createElement("input");
+
+    input.type = "file";
+    input.accept = "image/*";
+    input.multiple = true;
+
+    input.onchange = (event: Event) => {
+      const files = (event.target as HTMLInputElement).files;
+      if (files && files.length > 0) {
+        // 파일 처리 로직 추가
+        console.log("Selected files:", files);
+      }
+    };
+    input.click();
+  }
+
   return (
     <section className={`toggle-fade-in w-4/5 ${isExpanded ? "block" : "hidden"} pl-2 transition-all duration-300`}>
       {images && images.length > 0 ? (
@@ -120,6 +138,7 @@ const RightPanelPatientImages = ({
               style={{
                 background: "linear-gradient(to bottom, #5856D6, #3822FF)",
               }}
+              onClick={handleLoadImages}
             >
               Load image
             </button>
