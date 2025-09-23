@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useParams, useLocation } from "react-router-dom";
 
 import { getSessionDetailApi, getPatientListApi } from "@apis/userApi";
+import { getChatResponse } from "@apis/chatApi";
 
 import type { Message, Session } from "@/types/sessionsType";
 
@@ -31,6 +32,7 @@ const Chatting = () => {
 
   const [chattingPatientInfo, setChattingPatientInfo] = useState<{ id: string; name: string } | null>(null);
   const [sessionDetail, setSessionDetail] = useState<Session | null>(null);
+  const [thinking, setThinking] = useState(false);
 
   const messagesContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -56,7 +58,7 @@ const Chatting = () => {
       messageData.messageImages = images.map((file) => URL.createObjectURL(file) || file.name);
     }
 
-    // 이후 서버에 메시지 전송: 현재는 임시로 상태에 추가
+    // 우선 상태에 메시지 추가
     setSessionDetail((prev) => {
       if (!prev) return null;
 
@@ -65,6 +67,44 @@ const Chatting = () => {
         messages: [...prev.messages, messageData],
       };
     });
+
+    setThinking(true);
+
+    // 메시지 전송 후 스크롤을 맨 아래로 이동
+    setTimeout(() => {
+      if (messagesContainerRef.current) {
+        messagesContainerRef.current.scrollTo({
+          top: messagesContainerRef.current.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+    }, 50);
+
+    // GPT 모델에 메시지 전송 및 응답 받기
+    const gptResponse = await getChatResponse({
+      history: sessionDetail ? sessionDetail.messages : [messageData],
+      userMessage: message,
+    });
+
+    // GPT 응답 메시지 데이터 생성
+    const gptMessageData: Message = {
+      messageId: Date.now() + 1, // 임시 ID, 실제로는 서버에서 받아와야 함
+      role: "ASSISTANT",
+      content: gptResponse,
+      createDate: new Date().toISOString(),
+    };
+
+    // 이후 서버에 메시지 전송: 현재는 임시로 상태에 추가
+    setSessionDetail((prev) => {
+      if (!prev) return null;
+
+      return {
+        ...prev,
+        messages: [...prev.messages, gptMessageData],
+      };
+    });
+
+    setThinking(false);
 
     // 메시지 전송 후 스크롤을 맨 아래로 이동
     setTimeout(() => {
@@ -161,6 +201,12 @@ const Chatting = () => {
                 ))
               ) : (
                 <LoadChatting message="대화가 없습니다. 새로운 메시지를 입력해보세요." />
+              )}
+
+              {thinking && (
+                <span className="animate-pulse font-pre-medium text-icon px-6 py-2">
+                  생각하는 중 <span className="animate-bounce inline-block">...</span>
+                </span>
               )}
             </div>
           </div>

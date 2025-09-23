@@ -1,4 +1,4 @@
-import type { SessionsResponse } from "../types/sessionsType";
+import type { SessionsResponse } from "@/types/sessionsType";
 
 import tempImg1 from "@datas/cxr_image/cxr_01.jpg";
 import tempImg2 from "@datas/cxr_image/cxr_02.jpeg";
@@ -22,7 +22,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743001,
           role: "ASSISTANT",
-          content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다."}',
           createDate: "2025-11-01T21:19:54.055043",
         },
       ],
@@ -43,7 +43,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743003,
           role: "ASSISTANT",
-          content: "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다."}',
           createDate: "2025-05-05T12:43:43.196082",
         },
       ],
@@ -64,7 +64,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743005,
           role: "ASSISTANT",
-          content: "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다."}',
           createDate: "2024-02-13T13:38:02.666566",
         },
       ],
@@ -85,7 +85,8 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743007,
           role: "ASSISTANT",
-          content: "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다.",
+          content:
+            '{"answerSummary": "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다.", "clinicalTips": ["추가 흉부 CT 촬영 권장", "흉수 천자 및 분석 고려"]}',
           createDate: "2025-12-18T19:22:23.854454",
           messageImages: [tempImg1],
         },
@@ -107,7 +108,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743009,
           role: "ASSISTANT",
-          content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다."}',
           createDate: "2024-10-10T10:56:16.768629",
         },
       ],
@@ -128,7 +129,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743011,
           role: "ASSISTANT",
-          content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다."}',
           createDate: "2024-08-15T07:08:21.398726",
         },
       ],
@@ -149,7 +150,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743013,
           role: "ASSISTANT",
-          content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다."}',
           createDate: "2025-04-21T12:56:05.478729",
         },
       ],
@@ -170,7 +171,8 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743015,
           role: "ASSISTANT",
-          content: "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.",
+          content:
+            '{"answerSummary": "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.", "clinicalTips": ["추가 폐 기능 검사 권장", "고해상도 CT 촬영 고려"]}',
           createDate: "2025-04-11T14:38:50.897593",
         },
       ],
@@ -191,7 +193,8 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743017,
           role: "ASSISTANT",
-          content: "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.",
+          content:
+            '{"answerSummary": "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.", "clinicalTips": ["추가 폐 기능 검사 권장", "고해상도 CT 촬영 고려"]}',
           createDate: "2025-08-08T05:42:48.289862",
         },
       ],
@@ -212,7 +215,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743019,
           role: "ASSISTANT",
-          content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다."}',
           createDate: "2024-03-12T23:29:06.918287",
         },
       ],
@@ -232,7 +235,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743021,
           role: "ASSISTANT",
-          content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다."}',
           createDate: "2024-06-24T23:42:08.985329",
           messageImages: [tempImg1],
         },
@@ -254,7 +257,8 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743023,
           role: "ASSISTANT",
-          content: "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.",
+          content:
+            '{"answerSummary": "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.", "clinicalTips": ["추가 폐 기능 검사 권장", "고해상도 CT 촬영 고려"]}',
           createDate: "2025-01-14T19:46:22.787045",
         },
       ],
@@ -275,7 +279,8 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743025,
           role: "ASSISTANT",
-          content: "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.",
+          content:
+            '{"answerSummary": "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.", "clinicalTips": ["추가 폐 기능 검사 권장", "고해상도 CT 촬영 고려"]}',
           createDate: "2025-08-08T16:53:20.675547",
         },
       ],
@@ -296,7 +301,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743027,
           role: "ASSISTANT",
-          content: "Right lower lung에서 Mass 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Right lower lung에서 Mass 의심 소견이 관찰됩니다."}',
           createDate: "2024-01-30T23:47:05.194881",
         },
       ],
@@ -317,7 +322,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743029,
           role: "ASSISTANT",
-          content: "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다."}',
           createDate: "2025-09-26T02:02:22.469989",
         },
       ],
@@ -338,7 +343,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743031,
           role: "ASSISTANT",
-          content: "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다."}',
           createDate: "2024-08-30T18:39:48.238969",
         },
       ],
@@ -359,7 +364,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743033,
           role: "ASSISTANT",
-          content: "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다."}',
           createDate: "2025-05-22T00:39:12.015466",
         },
       ],
@@ -380,7 +385,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743035,
           role: "ASSISTANT",
-          content: "Right lower lung에서 Mass 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Right lower lung에서 Mass 의심 소견이 관찰됩니다."}',
           createDate: "2024-10-17T14:00:53.427296",
         },
       ],
@@ -401,7 +406,8 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743037,
           role: "ASSISTANT",
-          content: "Both lungs에서 COPD 의심 소견이 관찰됩니다.",
+          content:
+            '{"answerSummary": "Both lungs에서 COPD 의심 소견이 관찰됩니다.", "clinicalTips": ["폐 기능 검사 권장", "흡입기 사용법 교육 필요"]}',
           createDate: "2024-05-31T04:08:00.639979",
         },
       ],
@@ -422,7 +428,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743039,
           role: "ASSISTANT",
-          content: "Right upper lung에서 Tuberculosis 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Right upper lung에서 Tuberculosis 의심 소견이 관찰됩니다."}',
           createDate: "2025-08-09T07:33:07.475869",
         },
       ],
@@ -443,7 +449,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743041,
           role: "ASSISTANT",
-          content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다."}',
           createDate: "2024-12-24T01:28:06.882411",
         },
       ],
@@ -464,7 +470,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743043,
           role: "ASSISTANT",
-          content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다."}',
           createDate: "2024-12-14T17:54:16.757101",
         },
       ],
@@ -485,7 +491,8 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743045,
           role: "ASSISTANT",
-          content: "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.",
+          content:
+            '{"answerSummary": "Both lungs에서 Interstitial Lung Disease 의심 소견이 관찰됩니다.", "clinicalTips": ["추가 폐 기능 검사 권장", "고해상도 CT 촬영 고려"]}',
           createDate: "2025-01-07T05:35:19.468477",
         },
       ],
@@ -506,7 +513,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743047,
           role: "ASSISTANT",
-          content: "Right upper lung에서 Tuberculosis 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Right upper lung에서 Tuberculosis 의심 소견이 관찰됩니다."}',
           createDate: "2024-04-18T02:48:30.961110",
         },
       ],
@@ -527,7 +534,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743049,
           role: "ASSISTANT",
-          content: "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left upper lung에서 Pneumonia 의심 소견이 관찰됩니다."}',
           createDate: "2025-08-27T09:51:15.450982",
         },
       ],
@@ -548,7 +555,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743051,
           role: "ASSISTANT",
-          content: "Right lower lung에서 Mass 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Right lower lung에서 Mass 의심 소견이 관찰됩니다."}',
           createDate: "2024-03-25T03:44:21.517690",
         },
       ],
@@ -569,7 +576,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743053,
           role: "ASSISTANT",
-          content: "Right upper lung에서 Tuberculosis 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Right upper lung에서 Tuberculosis 의심 소견이 관찰됩니다."}',
           createDate: "2025-09-03T11:01:17.483985",
         },
       ],
@@ -590,7 +597,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743055,
           role: "ASSISTANT",
-          content: "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Left lung base에서 Pleural Effusion 의심 소견이 관찰됩니다."}',
           createDate: "2024-09-26T11:49:10.648957",
         },
       ],
@@ -611,7 +618,7 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743057,
           role: "ASSISTANT",
-          content: "Right lower lung에서 Mass 의심 소견이 관찰됩니다.",
+          content: '{"answerSummary": "Right lower lung에서 Mass 의심 소견이 관찰됩니다."}',
           createDate: "2025-09-17T13:27:18.776414",
         },
       ],
@@ -632,7 +639,8 @@ export const SESSIONS: SessionsResponse = {
         {
           messageId: 99254743059,
           role: "ASSISTANT",
-          content: "Both lungs에서 COPD 의심 소견이 관찰됩니다.",
+          content:
+            '{"answerSummary": "Both lungs에서 COPD 의심 소견이 관찰됩니다.", "clinicalTips": ["폐 기능 검사 권장", "흡입기 사용법 교육 필요"]}',
           createDate: "2025-12-24T17:53:23.117427",
         },
       ],

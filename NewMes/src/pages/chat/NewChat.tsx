@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import type { Session, Message } from "@/types/sessionsType";
+
+import { getChatResponse } from "@apis/chatApi";
 
 import ChatInput from "@components/input/ChatInput";
 
@@ -9,11 +12,15 @@ import useSystemStore from "@stores/systemStore";
 const NewChat = () => {
   const navigate = useNavigate();
 
+  const [thinking, setThinking] = useState(false);
+
   const { selectedPatientId } = useSystemStore();
 
   // 메시지 전송 로직
   async function handleSubmit({ message, images }: { message: string; images: File[] | null }) {
     if (!message || message.trim() === "") return;
+
+    setThinking(true);
 
     // 메시지 데이터 생성
     const messageData: Message = {
@@ -28,14 +35,27 @@ const NewChat = () => {
       messageData.messageImages = images.map((file) => file.name);
     }
 
+    // GPT 모델에 메시지 전송 및 응답 받기
+    const gptResponse = await getChatResponse({ history: [messageData], userMessage: message });
+
+    // GPT 응답 메시지 데이터 생성
+    const gptMessageData: Message = {
+      messageId: Date.now() + 1, // 임시 ID, 실제로는 서버에서 받아와야 함
+      role: "ASSISTANT",
+      content: gptResponse,
+      createDate: new Date().toISOString(),
+    };
+
     // 세션 데이터 생성 (임시: 실제로는 백에서 처리)
     const sessionData: Session = {
       id: selectedPatientId.id ? Number(selectedPatientId.id) : Date.now(), // 선택된 환자 ID가 있으면 그걸로, 없으면 임시 ID (API 필요)
       patientName: selectedPatientId.name ? selectedPatientId.name : "뉴메스", // 선택된 환자 이름이 있으면 그걸로, 없으면 기본 빈 문자열
       contentSummary: message.slice(0, 30), // 임시로 첫 30자 요약: 추후 백에서 요약 처리
       createDate: new Date().toISOString(),
-      messages: [messageData], // 첫 메시지 포함
+      messages: [messageData, gptMessageData], // 첫 메시지 포함
     };
+
+    setThinking(false);
 
     navigate(`/chat/${sessionData.id}`, { state: { session: sessionData } });
   }
@@ -50,7 +70,15 @@ const NewChat = () => {
         </h1>
 
         <section className="w-full max-w-240 h-fit">
-          <ChatInput onSubmit={handleSubmit} />
+          {thinking ? (
+            <section className="flex flex-col justify-between items-start w-full max-w-full h-fit px-6 py-4 gap-4 bg-inactive rounded-3xl">
+              <span className="animate-pulse font-pre-medium text-icon px-1 py-4">
+                생각하는 중 <span className="animate-bounce inline-block">...</span>
+              </span>
+            </section>
+          ) : (
+            <ChatInput onSubmit={handleSubmit} />
+          )}
         </section>
       </div>
     </div>

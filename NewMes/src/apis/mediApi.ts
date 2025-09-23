@@ -24,9 +24,19 @@ export const getDiseaseList = async ({
   searchText = " ",
 }): Promise<MediType[]> => {
   try {
-    const response = await instance.get(
-      `https://apis.data.go.kr/B551182/diseaseInfoService1/getDissNameCodeList1?serviceKey=${VITE_MEDI_API_KEY}&numOfRows=${numOfRows}&pageNo=${pageNo}&sickType=${sickType}&medTp=${medTp}&diseaseType=${diseaseType}&searchText=${searchText}`
-    );
+    const params = {
+      serviceKey: VITE_MEDI_API_KEY,
+      numOfRows,
+      pageNo,
+      sickType,
+      medTp,
+      diseaseType,
+      searchText,
+    };
+
+    const response = await instance.get("https://apis.data.go.kr/B551182/diseaseInfoService1/getDissNameCodeList1", {
+      params,
+    });
     console.log("Disease List", response.data);
     return response.data.response.body.items.item as MediType[];
   } catch (error: unknown) {

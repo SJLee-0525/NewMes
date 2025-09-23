@@ -48,6 +48,7 @@ const RAW_RUNTIME_STATE =
           ["globals", "npm:16.4.0"],\
           ["msw", "virtual:b9117634eb3f0bb772cc8a6702dcec4b075d5c1a90bf7d0326c146dcfb40cdd4fe3bd433529366bcf7ccf2ab81cf5df25118821b4c20c6438f9b23550772caf6#npm:2.11.2"],\
           ["newmes", "workspace:."],\
+          ["openai", "virtual:b9117634eb3f0bb772cc8a6702dcec4b075d5c1a90bf7d0326c146dcfb40cdd4fe3bd433529366bcf7ccf2ab81cf5df25118821b4c20c6438f9b23550772caf6#npm:5.22.1"],\
           ["path", "npm:0.12.7"],\
           ["prettier", "npm:3.6.2"],\
           ["react", "npm:19.1.1"],\
@@ -5072,6 +5073,7 @@ const RAW_RUNTIME_STATE =
           ["globals", "npm:16.4.0"],\
           ["msw", "virtual:b9117634eb3f0bb772cc8a6702dcec4b075d5c1a90bf7d0326c146dcfb40cdd4fe3bd433529366bcf7ccf2ab81cf5df25118821b4c20c6438f9b23550772caf6#npm:2.11.2"],\
           ["newmes", "workspace:."],\
+          ["openai", "virtual:b9117634eb3f0bb772cc8a6702dcec4b075d5c1a90bf7d0326c146dcfb40cdd4fe3bd433529366bcf7ccf2ab81cf5df25118821b4c20c6438f9b23550772caf6#npm:5.22.1"],\
           ["path", "npm:0.12.7"],\
           ["prettier", "npm:3.6.2"],\
           ["react", "npm:19.1.1"],\
@@ -5220,6 +5222,32 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["once", "npm:1.4.0"],\
           ["wrappy", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["openai", [\
+      ["npm:5.22.1", {\
+        "packageLocation": "./.yarn/cache/openai-npm-5.22.1-ce5f81823b-a5a839ac54.zip/node_modules/openai/",\
+        "packageDependencies": [\
+          ["openai", "npm:5.22.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:b9117634eb3f0bb772cc8a6702dcec4b075d5c1a90bf7d0326c146dcfb40cdd4fe3bd433529366bcf7ccf2ab81cf5df25118821b4c20c6438f9b23550772caf6#npm:5.22.1", {\
+        "packageLocation": "./.yarn/__virtual__/openai-virtual-f94152197f/0/cache/openai-npm-5.22.1-ce5f81823b-a5a839ac54.zip/node_modules/openai/",\
+        "packageDependencies": [\
+          ["@types/ws", null],\
+          ["@types/zod", null],\
+          ["openai", "virtual:b9117634eb3f0bb772cc8a6702dcec4b075d5c1a90bf7d0326c146dcfb40cdd4fe3bd433529366bcf7ccf2ab81cf5df25118821b4c20c6438f9b23550772caf6#npm:5.22.1"],\
+          ["ws", null],\
+          ["zod", null]\
+        ],\
+        "packagePeers": [\
+          "@types/ws",\
+          "@types/zod",\
+          "ws",\
+          "zod"\
         ],\
         "linkType": "HARD"\
       }]\

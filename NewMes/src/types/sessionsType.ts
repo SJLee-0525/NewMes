@@ -22,6 +22,11 @@
 //       ]
 //     },
 
+export interface ChatTurn {
+  role: "user" | "assistant";
+  content: string;
+}
+
 export interface Message {
   messageId: number;
   role: "USER" | "ASSISTANT";

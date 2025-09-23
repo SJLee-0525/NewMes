@@ -10,8 +10,31 @@ interface AssistantMessageProps {
   content: string;
 }
 
+// { Answer Summary: 요약 내용, Clinical Tips?: [임상 팁1, 임상 팁2] }
 const AssistantMessage = ({ date, file, content }: AssistantMessageProps) => {
   const formattedDateTime = getFormattedDateTime(date);
+
+  const { answerSummary, clinicalTips } = parseContent(content);
+
+  function parseContent(text: string): { answerSummary: string; clinicalTips: string[] } {
+    // text 예시: '{"answerSummary": "Both lungs에서 COPD 의심 소견이 관찰됩니다.", "clinicalTips": ["폐 기능 검사 권장", "흡입기 사용법 교육 필요"]}'
+
+    try {
+      // JSON 형태로 변환을 위해 key에 쌍따옴표 추가
+      const jsonString = text
+        .replace(/(\w+):/g, '"$1":') // key에 쌍따옴표 추가
+        .replace(/'/g, '"'); // 작은따옴표를 큰따옴표로 변환
+
+      const parsed = JSON.parse(jsonString);
+
+      return {
+        answerSummary: parsed.answerSummary || "",
+        clinicalTips: Array.isArray(parsed.clinicalTips) ? parsed.clinicalTips : [],
+      };
+    } catch {
+      return { answerSummary: text, clinicalTips: [] };
+    }
+  }
 
   return (
     <div
@@ -23,10 +46,10 @@ const AssistantMessage = ({ date, file, content }: AssistantMessageProps) => {
 
         {/* 메시지 내용: '\n을 <br />로 변환해서 줄바꿈 처리 */}
         <span className="w-full text-lg text-left font-pre-medium break-words">
-          {content.split("\n").map((line, idx) => (
+          {answerSummary.split("\n").map((line, idx) => (
             <span key={idx}>
               {line}
-              {idx !== content.split("\n").length - 1 && <br />}
+              {idx !== answerSummary.split("\n").length - 1 && <br />}
             </span>
           ))}
         </span>
@@ -44,20 +67,18 @@ const AssistantMessage = ({ date, file, content }: AssistantMessageProps) => {
         </figure>
       )}
 
-      <span className="flex flex-col justify-start items-start w-full px-1 gap-3 text-lg text-left font-pre-medium">
-        <h3 className="font-pre-bold text-3xl">Clinical Tip:</h3>
+      {clinicalTips && clinicalTips.length > 0 && (
+        <span className="flex flex-col justify-start items-start w-full px-1 gap-3 text-lg text-left font-pre-medium">
+          <h3 className="font-pre-bold text-3xl">Clinical Tip:</h3>
 
-        {/* 임시로,, 줄바꿈ㅅ 시 구분자? 다음에 글자 나오도록 수정해야함 */}
-        <ul className="font-pre-medium space-y-2.5 list-disc list-inside marker:text-white marker:text-base">
-          <li>Tip 1: Stay hydrated</li>
-          <li>Tip 2: Take regular breaks</li>
-          <li className="text-wrap break-words">
-            Tip 3: However, a definitive diagnosis should always integrate CT imaging, clinical context, and temporal
-            progression. However, a definitive diagnosis should always integrate CT imaging, clinical context, and
-            temporal progression.
-          </li>
-        </ul>
-      </span>
+          {/* 임시로,, 줄바꿈ㅅ 시 구분자? 다음에 글자 나오도록 수정해야함 */}
+          <ul className="font-pre-medium space-y-2.5 list-disc list-inside marker:text-white marker:text-base">
+            {clinicalTips.map((tip: string, index: number) => (
+              <li key={index}>{tip}</li>
+            ))}
+          </ul>
+        </span>
+      )}
     </div>
   );
 };

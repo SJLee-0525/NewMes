@@ -4236,6 +4236,7 @@ __metadata:
     framer-motion: "npm:^12.23.14"
     globals: "npm:^16.4.0"
     msw: "npm:^2.11.2"
+    openai: "npm:^5.22.1"
     path: "npm:^0.12.7"
     prettier: "npm:^3.6.2"
     react: "npm:^19.1.1"
@@ -4374,6 +4375,23 @@ __metadata:
   dependencies:
     wrappy: "npm:1"
   checksum: 10c0/5d48aca287dfefabd756621c5dfce5c91a549a93e9fdb7b8246bc4c4790aa2ec17b34a260530474635147aeb631a2dcc8b32c613df0675f96041cbb8244517d0
+  languageName: node
+  linkType: hard
+
+"openai@npm:^5.22.1":
+  version: 5.22.1
+  resolution: "openai@npm:5.22.1"
+  peerDependencies:
+    ws: ^8.18.0
+    zod: ^3.23.8
+  peerDependenciesMeta:
+    ws:
+      optional: true
+    zod:
+      optional: true
+  bin:
+    openai: bin/cli
+  checksum: 10c0/a5a839ac54315176fb5ae5c91d057dbc7e9bd3df7e0dd9645d28372af6b839ffcb5cccd82561ae6037e591dfb40db283a279a66286c8dd57c5dec6be77012f9e
   languageName: node
   linkType: hard
 
