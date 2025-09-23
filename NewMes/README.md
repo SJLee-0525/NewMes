@@ -133,6 +133,11 @@ interface AuthStore {
 
 ```javascript
 src
+├─ assets           // 이미지, 폰트 등 정적 자원
+│  ├─ fonts         // 폰트 파일
+│  ├─ icons         // 아이콘 파일
+│  └─ images        // 이미지 파일
+│
 ├─ components       // 재사용 가능한 컴포넌트들
 │  ├─ box           // 공용 박스 컴포넌트
 │  ├─ button        // 공용 버튼 컴포넌트
