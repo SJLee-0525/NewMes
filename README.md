@@ -155,7 +155,7 @@ src
 
 ### 메인 페이지
 
-![main](./public/readme/main.png)
+![main](./NewMes/public/readme/main.png)
 
 - AI와 실시간으로 대화하며 메시지를 생성하는 메인 채팅 화면입니다.
 - 좌측 패널에서 최근 대화 세션과 환자 리포트를 선택할 수 있습니다.
@@ -163,36 +163,36 @@ src
 - 우측 패널에서 환자를 선택하면, 해당 환자 정보로 대화를 시작할 수 있습니다.
 - 우측 패널에서 이미지를 클릭하면, 이미지를 대화창에 삽입할 수 있습니다.
 
-![searchDisease](./public/readme/searchDisease.png)
+![searchDisease](./NewMes/public/readme/searchDisease.png)
 
 - 좌측 패널에서 상병 검색 기능을 통해 자주 사용하는 상병명을 빠르게 찾을 수 있습니다.
 - 검색 결과를 클릭하면, 해당 상병명이 대화창에 삽입됩니다.
 
 ### 대화 페이지
 
-![detailChat](./public/readme/detailchat.png)
+![detailChat](./NewMes/public/readme/detailchat.png)
 
 - 선택한 대화 세션의 상세 메시지 내역을 확인할 수 있습니다.
 - 우측 패널에서 이미지를 클릭하여 대화창에 삽입할 수 있습니다.
 
-![photo](./public/readme/photo.png)
+![photo](./NewMes/public/readme/photo.png)
 
 - 이미지 클릭 시, 확대된 이미지를 모달로 확인할 수 있습니다.
 
 ### 리포트 페이지
 
-![report](./public/readme/report.png)
+![report](./NewMes/public/readme/report.png)
 
 - 환자 리포트 목록을 확인할 수 있습니다.
 - 저장 아이콘을 누르면, 해당 리포트를 pdf로 다운로드 하거나 프린트할 수 있습니다.
 
-![print](./public/readme/print.png)
+![print](./NewMes/public/readme/print.png)
 
 - 실제 저장된 pdf 리포트 예시입니다.
 
 ### DASHBOARD 페이지
 
-![news](./public/readme/news.png)
+![news](./NewMes/public/readme/news.png)
 
 - 최신 헬스 뉴스를 확인할 수 있습니다.
 - 뉴스를 클릭하면 새 탭에서 원문을 확인할 수 있습니다.
@@ -200,25 +200,25 @@ src
 
 ### PRICING 페이지
 
-![plan](./public/readme/plan.png)
+![plan](./NewMes/public/readme/plan.png)
 
 - 서비스의 요금제를 확인할 수 있습니다.
 - 각 요금제의 특징과 가격을 비교할 수 있습니다.
 
 ### HELP 페이지
 
-![help](./public/readme/help.png)
+![help](./NewMes/public/readme/help.png)
 
 - 자주 묻는 질문(FAQ)과 고객 지원 정보를 제공합니다.
 
 ### SETTINGS 페이지
 
-![theme](./public/readme/theme.png)
+![theme](./NewMes/public/readme/theme.png)
 
 - 사용자 프로필 정보와 테마 설정을 관리할 수 있습니다.
 - 라이트 모드와 다크 모드를 선택할 수 있습니다.
 
-![lightMain](./public/readme/lightMain.png)
+![lightMain](./NewMes/public/readme/lightMain.png)
 
 - 라이트 모드에서의 메인 페이지 화면입니다.
 
