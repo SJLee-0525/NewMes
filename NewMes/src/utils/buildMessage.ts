@@ -2,7 +2,7 @@ import type { ChatCompletionMessageParam } from "openai/resources/chat/completio
 
 import type { ChatTurn, Message } from "@/types/sessionsType";
 
-import { SYSTEM_PROMPT, USER_PROMPT } from "@datas/PROMPTS";
+import { SYSTEM_PROMPT, USER_PROMPT, MAX_RECENT_MESSAGES } from "@datas/PROMPTS";
 
 /**
  * Message 배열을 ChatTurn 배열로 변환합니다.
@@ -10,7 +10,7 @@ import { SYSTEM_PROMPT, USER_PROMPT } from "@datas/PROMPTS";
  * @returns ChatTurn 배열
  */
 export const convertToChatTurn = (messages: Message[]): ChatTurn[] => {
-  const recentMessages = messages.slice(-6); // 최근 6개만 사용
+  const recentMessages = messages.slice(-MAX_RECENT_MESSAGES); // 최근 6개만 사용
 
   return recentMessages.map((msg) => ({
     role: msg.role === "USER" ? "user" : "assistant",

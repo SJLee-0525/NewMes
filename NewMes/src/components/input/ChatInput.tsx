@@ -227,7 +227,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
       const imageFiles = await Promise.all(
         selectedPatientId.images.map(async (img, idx) => {
           try {
-            const response = await fetch(TEMP_IMAGES[idx % 3]);
+            const response = await fetch(TEMP_IMAGES[idx % TEMP_IMAGES.length]);
             if (!response.ok) throw new Error(`Failed to fetch image: ${img.filename}`);
 
             const blob = await response.blob();

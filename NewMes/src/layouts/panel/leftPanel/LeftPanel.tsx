@@ -27,7 +27,7 @@ const LeftPanel = ({ isOpen }: { isOpen: boolean }) => {
 
       // 문서 객체, 제목 설정
       const doc = printWindow.document;
-      doc.title = `${selectedReportId.name}님 진단 보고서`;
+      doc.title = `${selectedReportId.name || ""}님 진단 보고서`;
 
       // 외부 CSS (안 불러와져서 추후 수정해야함.. 일단 인라인으로 강제)
       const link = doc.createElement("link");

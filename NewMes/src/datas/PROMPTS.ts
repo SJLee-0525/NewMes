@@ -14,6 +14,7 @@ gpt-4o	            $2.50	    $1.25	        $10.00
 
 export const GPT_MODEL = "gpt-5-nano"; // 사용할 GPT 모델 이름
 export const MAX_TOKENS = 10000; // 모델의 최대 토큰 수
+export const MAX_RECENT_MESSAGES = 6;
 
 export const SYSTEM_PROMPT: Readonly<ChatCompletionMessageParam[]> = [
   {
