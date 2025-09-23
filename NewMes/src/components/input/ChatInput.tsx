@@ -5,6 +5,7 @@ import type { MediType } from "@/types/MediType";
 import { getDiseaseList } from "@apis/mediApi";
 
 import CloseIcon from "@assets/icons/CloseIcon";
+import SearchIcon from "@assets/icons/SearchIcon";
 import SendIcon from "@assets/icons/SendIcon";
 import ClipIcon from "@assets/icons/ClipIcon";
 
@@ -106,6 +107,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
     return () => clearTimeout(delayDebounceFn);
   }, [searchQuery, sickType]);
 
+  // 질병 검색 중 키보드 이벤트
   function handleSearchDiseaseKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     switch (e.key) {
       case "Escape":
@@ -167,6 +169,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
 
   // Enter 키로 전송 (Shift + Enter는 줄바꿈)
   function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+    // 화살표 위 키와 Shift 키가 함께 눌렸을 때 질병 검색창 열기
     if (e.key === "ArrowUp" && e.shiftKey) {
       e.preventDefault();
       setSearchDisease(true);
@@ -321,7 +324,7 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
 
       <textarea
         ref={textareaRef}
-        className="w-full min-h-10 max-h-80 resize-none font-pre-regular text-icon text-xl placeholder:text-icon placeholder:text-xl bg-transparent outline-none overflow-y-auto"
+        className="w-full min-h-10 max-h-80 px-2 pt-1 resize-none font-pre-regular text-icon text-xl placeholder:text-icon placeholder:text-xl bg-transparent outline-none overflow-y-auto"
         placeholder="Ask anything.."
         rows={1}
         style={{ wordBreak: "break-word" }}
@@ -329,22 +332,39 @@ const ChatInput = ({ onSubmit }: { onSubmit: (data: { message: string; images: F
         onKeyDown={(e) => handleKeyDown(e)}
       />
 
-      <div className="flex flex-row-reverse justify-start items-center w-full h-fit gap-2.5">
-        <SendIcon
+      <section className="flex justify-between items-center w-full h-fit">
+        <SearchIcon
           width={40}
           height={40}
           strokeColor="#8C8C8C"
-          className="p-1.5 rounded-full cursor-pointer hover:bg-toggleInactive transition-color duration-300"
-          onClick={handleSubmit}
+          className={`p-1 rounded-full cursor-pointer transition-colors duration-300 ${searchDisease ? "bg-toggleInactive" : "bg-transparent hover:bg-toggleInactive"}`}
+          onClick={() => {
+            setSearchDisease(true);
+
+            // 포커스 이동
+            setTimeout(() => {
+              searchRef.current?.focus();
+            }, 100);
+          }}
         />
-        <ClipIcon
-          width={40}
-          height={40}
-          strokeColor="#8C8C8C"
-          className="p-1 rounded-full cursor-pointer hover:bg-toggleInactive transition-color duration-300"
-          onClick={handleAttachImage}
-        />
-      </div>
+
+        <section className="flex justify-center items-center w-fit h-fit gap-2.5">
+          <ClipIcon
+            width={40}
+            height={40}
+            strokeColor="#8C8C8C"
+            className="p-1 rounded-full cursor-pointer hover:bg-toggleInactive transition-color duration-300"
+            onClick={handleAttachImage}
+          />
+          <SendIcon
+            width={40}
+            height={40}
+            strokeColor="#8C8C8C"
+            className="p-1.5 rounded-full cursor-pointer hover:bg-toggleInactive transition-color duration-300"
+            onClick={handleSubmit}
+          />
+        </section>
+      </section>
     </section>
   );
 };
