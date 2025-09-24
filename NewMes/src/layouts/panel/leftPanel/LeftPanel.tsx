@@ -84,7 +84,7 @@ const LeftPanel = ({ isOpen }: { isOpen: boolean }) => {
       : "w-2/5 min-w-150 border-r border-r-border";
 
   return (
-    <aside className={`flex flex-col ${leftWidth} h-full  transition-width duration-300`}>
+    <aside className={`flex flex-col ${leftWidth} h-full transition-width duration-300`}>
       {isOpen && (
         <>
           <LeftPanelNav onPrint={handlePrint} />

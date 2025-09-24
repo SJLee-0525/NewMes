@@ -78,7 +78,7 @@ const App = () => {
     <div className="flex flex-col w-screen h-screen">
       <TopNav />
 
-      <div className="relative flex-1 flex justify-between w-full h-full overflow-auto">
+      <div className="relative flex-1 flex justify-between w-full h-full overflow-hidden">
         <LeftPanel isOpen={leftSidebarOpen} />
 
         <div className="flex-1 flex flex-col w-full h-full transition-width duration-300">

@@ -170,8 +170,8 @@ const Chatting = () => {
 
       {sessionDetail ? (
         <section ref={messagesContainerRef} className="flex justify-center w-full overflow-y-auto">
-          <header className="absolute top-0 w-full max-w-320 z-10">
-            <h2 className="text-xl font-pre-semi-bold w-full pl-8 pr-10 py-3 bg-gradient-to-r from-dark to-dark/0 pointer-events-none">
+          <header className="absolute top-0 left-0 w-full max-w-320 z-10">
+            <h2 className="text-xl font-pre-semi-bold w-full pl-6 pr-10 py-3 bg-gradient-to-r from-dark to-dark/0 pointer-events-none">
               {chattingPatientInfo?.id} {chattingPatientInfo?.name}
             </h2>
           </header>

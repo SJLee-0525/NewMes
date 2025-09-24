@@ -14,7 +14,7 @@ const DetailBox = ({ type, size, title, detail }: DetailBoxProps) => {
     >
       <header className="flex justify-between items-start w-full min-h-10">
         <h3 className="w-full h-fit font-pre-semi-bold text-title text-left whitespace-nowrap">{title}</h3>
-        <EditIcon width={24} height={24} strokeColor="#8C8C8C" className="rounded-full hover:bg-toggleInactive" />
+        <EditIcon width={24} height={24} strokeColor="#8C8C8C" className="cursor-pointer" />
       </header>
 
       <section className="flex flex-col justify-center items-start w-full h-full">

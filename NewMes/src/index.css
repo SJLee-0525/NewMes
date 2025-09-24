@@ -32,6 +32,24 @@
   --color-disease1: #ff5e5e;
   --color-disease2: #fff0f0;
 }
+/* 스크롤바 색상 변경 예시 */
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 
 html.dark body {
   background: #070718;
